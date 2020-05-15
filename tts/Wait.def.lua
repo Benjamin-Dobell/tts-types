@@ -19,11 +19,11 @@ Wait = {}
 ---@overload fun(func: (fun(): void), conditionFunc: (fun(): boolean)): void
 ---@param func fun(): void
 ---@param conditionFunc fun(): boolean
----@param timeout number
+---@param timeout number @seconds
 ---@param timeoutFunc fun(): void
 ---@return number
 ---@see tts__Wait#stop
-function Wait.condition(func, numberFrames) end
+function Wait.condition(func, conditionFunc, timeout, timeoutFunc) end
 
 ---
 --- Enqueues a function to be executed after the specified amount of time (in seconds) has elapsed.

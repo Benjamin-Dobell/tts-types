@@ -42,12 +42,12 @@
 ---@field Stretch nil|boolean
 
 ---@shape tts__ObjectState_CustomImage
----@field URL string
+---@field ImageURL string
 ---@field ImageSecondaryURL nil|string
 ---@field ImageScale nil|number
 ---@field WidthScale nil|number
----@field BackIsHidden nil|boolean
----@field UniqueBack nil|boolean
+
+---@alias tts__ObjectState_BoardImage tts__ObjectState_CustomImage
 
 ---@shape tts__ObjectState_DieCustomImage : tts__ObjectState_CustomImage
 ---@field CustomDice tts__ObjectState_CustomImage_CustomDie
@@ -64,15 +64,45 @@
 ---@shape tts__ObjectState
 ---@field Name string
 ---@field Transform nil|tts__ObjectState_Transform
----@field Nickname nil|string
----@field Description nil|string
----@field GMNotes nil|string
+---@field Nickname nil|string @Default ""
+---@field Description nil|string @Default ""
+---@field GMNotes nil|string @Default ""
 ---@field GUID nil|string
----@field LuaScript nil|string
----@field LuaScriptState nil|string
+---@field LuaScript nil|string @Default ""
+---@field LuaScriptState nil|string @Default ""
+---@field XmlUI nil|string @Default ""
+---@field Grid nil|boolean @Default true
+---@field Snap nil|boolean @Default true
+---@field Autoraise nil|boolean @Default true
+---@field Sticky nil|boolean @Default true
+---@field Tooltip nil|boolean @Default true
+---@field Locked nil|boolean @Default false
+---@field IgnoreFoW nil|boolean @Default false
+---@field GridProjection nil|boolean @Default false
+---@field HideWhenFaceDown nil|boolean
+---@field Hands nil|boolean
+---@field AltSound nil|boolean
+---@field DeckIDs nil|number[] @Despite the name, these are card IDs not deck IDs
+---@field CardID nil|number
+---@field MaterialIndex nil|number
+---@field MeshIndex nil|number
+---@field Number nil|number
+---@field SidewaysCard nil|boolean
+---@field RPGmode nil|boolean
+---@field RPGdead nil|boolean
+---@field FogColor nil|string
+---@field FogHidePointers nil|boolean
+---@field FogReverseHiding nil|boolean
+---@field FogSeethrough nil|boolean
+---@field FogReverseHiding nil|boolean
+---@field vector nil|tts__CharVectorShape
 
 ---@shape tts__ContainerState : tts__ObjectState
 ---@field ContainedObjects tts__ObjectState[]
+
+---@shape tts__BoardState : tts__ObjectState
+---@field Name 'Custom_Board'
+---@field CustomImage tts__ObjectState_BoardImage
 
 ---@shape tts__CardState : tts__ObjectState
 ---@field Name 'Card'

@@ -13,6 +13,14 @@ function broadcastToColor(message, playerColor, messageColor) end
 
 ---@overload fun(value: any): string
 ---@overload fun(value: any, label: string): string
+---@param value any
+---@param label string
+---@param tags string
+---@return string
+function log(value, label, tags) end
+
+---@overload fun(value: any): string
+---@overload fun(value: any, label: string): string
 ---@overload fun(value: any, label: string, tag: string): string
 ---@overload fun(value: any, label: string, tag: string, concise: boolean): string
 ---@param value any

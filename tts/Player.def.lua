@@ -41,10 +41,12 @@ local PlayerInstance = {}
 ---@field right tts__Vector
 ---@field up tts__Vector
 
----@param handIndex number
+---@overload fun(): tts__HandTransform
+---@param handIndex number @Default 1
 ---@return tts__HandTransform
 function PlayerInstance.getHandTransform(handIndex) end
 
----@param handIndex number
+---@overload fun(): tts__Object[]
+---@param handIndex number @Default 1
 ---@return tts__Object[]
 function PlayerInstance.getHandObjects(handIndex) end

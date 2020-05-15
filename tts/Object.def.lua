@@ -1,13 +1,64 @@
 ---@alias tts__ObjectType "3D Text" | "Backgammon Piece" | "Bag" | "Block" | "Board" | "Calculator" | "Card" | "Checker" | "Chess" | "Chip" | "Clock" | "Coin" | "Counter" | "Deck" | "Dice" | "Domino" | "Figurine" | "Fog" | "FogOfWar" | "GoPiece" | "Hand" | "Infinite" | "InventoryBackground" | "InventoryBotBG" | "InventoryItemBlank" | "InventoryTopBG" | "Mp3" | "Notecard" | "Jigsaw" | "Jigsaw Box" | "Pointer" | "Randomize" | "rpgFigurine" | "Scripting" | "Stack" | "Superfight" | "Surface" | "Tablet" | "Tileset" | "VR UI"
 
+---@alias tts__JointType "Fixed" | "Hinge" | "Spring"
+
+---@shape tts__JointParameters
+---@field type tts__JointType
+---@field joint_object_guid nil|string
+---@field collision nil|boolean
+---@field break_force nil|number
+---@field break_torgue nil|number
+---@field axis nil|tts__VectorShape
+---@field anchor nil|tts__VectorShape
+---@field connected_anchor nil|tts__VectorShape
+
+---@alias tts__FixedJointOptions tts__JointParameters
+
+---@shape tts__SpringJointOptions : tts__JointParameters
+---@field spring nil|number @Default 10
+---@field damper nil|number @Default 0.2
+
+---@shape tts__HingeJointOptions : tts__JointParameters
+---@field motor_force nil|number
+---@field motor_velocity nil|number
+---@field motor_free_spin nil|boolean
+---@field max_distance nil|number
+---@field min_distance nil|number
+
 ---@class tts__Object
----@field guid string
----@field is_face_down boolean
+---@field angular_drag number
+---@field auto_raise boolean
+---@field bounciness number
+---@field drag number
+---@field drag_selectable boolean
+---@field dynamic_friction number
+---@field grid_projection boolean
+---@field guid string @[Read only]
+---@field held_by_color nil|tts__PlayerColor @[Read only]
+---@field hide_when_face_down boolean
+---@field ignore_fog_of_war boolean
+---@field interactable boolean
+---@field is_face_down boolean @[Read only]
+---@field loading_custom boolean @[Read only]
+---@field locked boolean
+---@field mass number
+---@field max_typed_number number
+---@field remainder nil|tts__Object @[Read only]
+---@field resting boolean
 ---@field script_state string
 ---@field spawning boolean
+---@field static_friction number
+---@field sticky boolean
 ---@field tag tts__ObjectType @An identifier indicating the type of Tabletop Simulator object. [Read only]
+---@field tooltip boolean
+---@field UI tts__UI @[Read only]
+---@field use_gravity boolean
+---@field use_grid boolean
 ---@field use_hands boolean @Whether or not this object may be held within a hand zone.
----@field UI tts__UI
+---@field use_rotation_value_flip boolean
+---@field use_snap_points boolean
+---@field value number
+---@field value_flags number
 local Object = {}
 
 --- The following are not real types in TTS, but this allows us to strongly type our code where an object of a specific type is required.
@@ -41,7 +92,7 @@ local Container
 
 ---@class tts__Deck : tts__Container
 
----@class tts__Dice : tts__Object
+---@class tts__Die : tts__Object
 
 ---@class tts__Domino : tts__Object
 
@@ -117,6 +168,11 @@ function Object.deal(count, destination, handIndex) end
 function Object.destruct() end
 
 ---
+--- Returns the object's angular velocity, in radians per second.
+---@return tts__Vector
+function Object.getAngularVelocity() end
+
+---
 --- Object's unique identifier.
 ---@return string
 function Object.getGUID() end
@@ -164,6 +220,15 @@ function Object.getPosition() end
 function Object.getRotation() end
 
 ---
+--- Returns the object's rotation value. Typically a number, but may also be a string for certain special dice.
+---
+--- At the time of writing, only Die_Piecepack has non-number rotation values; which are "Blank" and "Symbol" in place
+--- of the numbers 1 and 6 respectively (on a D6).
+---
+---@return number|string
+function Object.getRotationValue() end
+
+---
 --- Returns the object's scale.
 ---@return tts__Vector
 function Object.getScale() end
@@ -178,6 +243,21 @@ function Object.getQuantity() end
 ---@return tts__Vector
 function Object.getVelocity() end
 
+---Returns if the object is presently smooth moving, false, otherwise.
+function Object.isSmoothMoving() end
+
+---
+--- When called with arguments, creates a joint between this object and another object.
+---
+--- When called without any arguments, removes all joints on this object.
+---
+---@overload fun(): void
+---@overload fun(parameters: tts__JointParameters): boolean
+---@param object tts__Object
+---@param parameters tts__JointParameters
+---@return boolean
+function Object.jointTo(object, parameters) end
+
 ---
 --- Scales the object by the specified multiplier(s), relative to the object's existing scale.
 ---
@@ -185,6 +265,13 @@ function Object.getVelocity() end
 ---@param scale number
 ---@return true
 function Object.scale(scale) end
+
+---
+--- Sets whether the object is locked/frozen in place.
+---
+---@param lock boolean
+---@return true
+function Object.setLock(lock) end
 
 ---
 --- Smoothly moves the object to the specified position.
