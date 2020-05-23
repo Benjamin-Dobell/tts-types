@@ -43,6 +43,8 @@
 ---@field locked boolean
 ---@field mass number
 ---@field max_typed_number number
+---@field pick_up_position tts__Vector @[Read only]
+---@field pick_up_rotation tts__Vector @[Read only]
 ---@field remainder nil|tts__Object @[Read only]
 ---@field resting boolean
 ---@field script_state string
