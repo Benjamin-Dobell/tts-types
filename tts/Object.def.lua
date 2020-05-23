@@ -244,6 +244,7 @@ function Object.getQuantity() end
 function Object.getVelocity() end
 
 ---Returns if the object is presently smooth moving, false, otherwise.
+---@return boolean
 function Object.isSmoothMoving() end
 
 ---
