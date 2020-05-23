@@ -175,9 +175,19 @@ function Object.destruct() end
 function Object.getAngularVelocity() end
 
 ---
+--- Returns object's data (serialized saved state).
+---@return tts__ObjectState
+function Object.getData() end
+
+---
 --- Object's unique identifier.
 ---@return string
 function Object.getGUID() end
+
+---
+--- Returns object's data (saved state) serialized into a JSON encoded string.
+---@return string
+function Object.getJSON() end
 
 ---@shape tts__SimpleObjectState
 ---@field name string
@@ -360,16 +370,26 @@ function Object.takeObject(params) end
 ---@field scale nil|tts__VectorShape @Default Vector(1, 1, 1)
 ---@field sound nil|boolean @Default true
 ---@field snap_to_grid nil|boolean
-
----@shape tts__SpawnObjectJSONParams : tts__ObjectCallback
----@field json string
+---
+---@shape tts__SpawnObjectSerializedParams : tts__ObjectCallback
 ---@field position nil|tts__VectorShape
 ---@field rotation nil|tts__VectorShape
 ---@field scale nil|tts__VectorShape
 
+---@shape tts__SpawnObjectDataParams : tts__SpawnObjectSerializedParams
+---@field data tts__ObjectState
+
+---@shape tts__SpawnObjectJSONParams : tts__SpawnObjectSerializedParams
+---@field json string
+
 ---@param params tts__SpawnObjectParams
 ---@return tts__Object
 function spawnObject(params)
+end
+
+---@param params tts__SpawnObjectDataParams
+---@return tts__Object
+function spawnObjectData(params)
 end
 
 ---@param params tts__SpawnObjectJSONParams
