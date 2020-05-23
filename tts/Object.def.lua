@@ -232,10 +232,29 @@ function Object.getPosition() end
 function Object.getRotation() end
 
 ---
---- Returns the object's rotation value. Typically a number, but may also be a string for certain special dice.
+--- Returns the object's rotation value identifier. Often a number, but may also be a string.
 ---
---- At the time of writing, only Die_Piecepack has non-number rotation values; which are "Blank" and "Symbol" in place
---- of the numbers 1 and 6 respectively (on a D6).
+--- At the time of writing, the only non-custom die that has string rotation values is Die_Piecepack, which has values
+--- "Blank" and "Symbol" in place of the numbers 1 and 6 respectively (on a D6).
+---
+---@return number|string
+function Object.getRotationValue() end
+
+---@shape tts__Object_RotationValue
+---@field value number|string
+---@field rotation tts__CharVectorShape
+
+---
+--- Returns the object's rotation values.
+---
+---@return tts__Object_RotationValue[]
+function Object.getRotationValues() end
+
+---
+--- Returns the object's rotation values. Typically a number, but may also be a string for certain special dice.
+---
+--- At the time of writing, the only non-custom die that has string rotation values is Die_Piecepack, which has values
+--- "Blank" and "Symbol" in place of the numbers 1 and 6 respectively (on a D6).
 ---
 ---@return number|string
 function Object.getRotationValue() end
@@ -287,6 +306,13 @@ function Object.scale(scale) end
 function Object.setLock(lock) end
 
 ---
+--- Sets the object's position.
+---
+---@param position tts__VectorShape
+---@return true
+function Object.setPosition(position) end
+
+---
 --- Smoothly moves the object to the specified position.
 ---
 ---@overload fun(position: tts__VectorShape, collide: boolean): true
@@ -298,15 +324,32 @@ function Object.setLock(lock) end
 function Object.setPositionSmooth(position, collide, fast) end
 
 ---
+--- Sets the object's rotation to the specified orientation, provided as a vector of Euler angles.
+---
+---@param rotation tts__VectorShape
+---@return true
+function Object.setRotation(rotation) end
+
+---
 --- Smoothly rotates the object to the specified orientation, provided as a vector of Euler angles.
 ---
----@overload fun(position: tts__VectorShape, collide: boolean): true
----@overload fun(position: tts__VectorShape): true
----@param position tts__VectorShape
+---@overload fun(rotation: tts__VectorShape, collide: boolean): true
+---@overload fun(rotation: tts__VectorShape): true
+---@param rotation tts__VectorShape
 ---@param collide boolean @Whether collision detection is enabled. Default false.
 ---@param fast boolean @Whether object should rotate quickly. Default false.
 ---@return true
-function Object.setRotationSmooth(position, collide, fast) end
+function Object.setRotationSmooth(rotation, collide, fast) end
+
+---
+--- Smoothly sets the object's rotation to the rotation corresponding with the provided rotation value identifier.
+---
+--- Must be a string/number corresponding with an existing rotation value identifier.
+---
+---@param value number|string
+---@return true
+---@see tts__Object#getRotationValues
+function Object.setRotationValue(value) end
 
 ---
 --- Returns a world coordinate position corresponding with local coordinate position.
