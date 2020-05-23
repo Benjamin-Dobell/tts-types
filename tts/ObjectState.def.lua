@@ -18,10 +18,10 @@
 ---@field UniqueBack boolean
 
 --- D4 | D6 | D8 | D10 | D12 | D20
----@alias tts_DiceType 0 | 1 | 2 | 3 | 4 | 5
+---@alias tts_DieType 0 | 1 | 2 | 3 | 4 | 5
 
 ---@shape tts__ObjectState_CustomImage_CustomDie
----@field Type tts_DiceType
+---@field Type tts_DieType
 
 ---@shape tts__ObjectState_CustomImage_CustomToken
 ---@field Thickness nil|number
