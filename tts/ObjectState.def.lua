@@ -61,6 +61,10 @@
 ---@shape tts__ObjectState_TileCustomImage : tts__ObjectState_CustomImage
 ---@field CustomTile tts__ObjectState_CustomImage_CustomTile
 
+---@shape tts__ObjectState_RotationValue
+---@field Value number|string
+---@field Rotation tts__CharVectorShape
+
 ---@shape tts__ObjectState
 ---@field Name string
 ---@field Transform nil|tts__ObjectState_Transform
@@ -124,6 +128,12 @@
 ---@field DeckIDs number[] @Despite the name, these are card IDs not deck IDs
 ---@field ContainedObjects tts__ObjectState[]
 
----@shape tts__DieCustomState : tts__ObjectState
+---@alias tts__StandardDieName 'Die_4' | 'Die_6' | 'Die_6_Rounded' | 'Die_8' | 'Die_10' | 'Die_12' | 'Die_20'
+
+---@shape tts__DieState : tts__ObjectState
+---@field Name 'Custom_Dice' | tts__StandardDieName
+---@field RotationValues nil|tts__ObjectState_RotationValue[]
+
+---@shape tts__DieCustomState : tts__DieState
 ---@field Name 'Custom_Dice'
 ---@field CustomImage tts__ObjectState_DieCustomImage
