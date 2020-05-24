@@ -1,3 +1,17 @@
+---@shape tts__CharColorShape
+---@field r number
+---@field g number
+---@field b number
+---@field a nil|number
+
+---@shape tts__NumColorShape
+---@field [1] number
+---@field [2] number
+---@field [3] number
+---@field [4] nil|number
+
+---@alias tts__ColorShape tts__CharColorShape|tts__NumColorShape|number[]
+
 ---@class tts__Color
 ---@field __isColor true
 ---@field r number

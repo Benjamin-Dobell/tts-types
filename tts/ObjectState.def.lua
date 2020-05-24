@@ -90,6 +90,7 @@
 ---@field AltSound nil|boolean
 ---@field DeckIDs nil|number[] @Despite the name, these are card IDs not deck IDs
 ---@field CardID nil|number
+---@field ColorDiffuse nil|tts__CharColorShape
 ---@field MaterialIndex nil|number
 ---@field MeshIndex nil|number
 ---@field Number nil|number
