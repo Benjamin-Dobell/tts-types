@@ -77,12 +77,14 @@
 ---@field XmlUI nil|string @Default ""
 ---@field Grid nil|boolean @Default true
 ---@field Snap nil|boolean @Default true
+---@field DragSelectable nil|boolean @Default true
 ---@field Autoraise nil|boolean @Default true
 ---@field Sticky nil|boolean @Default true
 ---@field Tooltip nil|boolean @Default true
 ---@field Locked nil|boolean @Default false
 ---@field IgnoreFoW nil|boolean @Default false
 ---@field GridProjection nil|boolean @Default false
+---@field MeasureMovement nil|boolean
 ---@field HideWhenFaceDown nil|boolean
 ---@field Hands nil|boolean
 ---@field AltSound nil|boolean
