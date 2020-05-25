@@ -140,3 +140,6 @@
 ---@shape tts__DieCustomState : tts__DieState
 ---@field Name 'Custom_Dice'
 ---@field CustomImage tts__ObjectState_DieCustomImage
+
+---@shape tts__InfiniteState : tts__ContainerState
+---@field Name 'Infinite'
