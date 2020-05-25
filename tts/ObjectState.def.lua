@@ -141,5 +141,5 @@
 ---@field Name 'Custom_Dice'
 ---@field CustomImage tts__ObjectState_DieCustomImage
 
----@shape tts__InfiniteState : tts__ContainerState
----@field Name 'Infinite'
+---@shape tts__InfiniteBagState : tts__ContainerState
+---@field Name 'Infinite_Bag'
