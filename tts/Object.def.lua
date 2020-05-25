@@ -382,6 +382,7 @@ function Object.positionToWorld(position) end
 ---
 --- Registers this object for Global collision events, such as onObjectCollisionEnter. Always returns true.
 ---
+---@overload fun(): true
 ---@param stay boolean @Default false. Whether we should register for onObjectCollisionStay. Stay events may negatively impact performance, only set this to true if absolutely necessary.
 ---@return true
 function Object.registerCollisions(stay) end
