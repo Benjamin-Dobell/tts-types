@@ -397,6 +397,12 @@ function Object.registerCollisions(stay) end
 ---@return nil|tts__Object
 function Object.takeObject(params) end
 
+---
+--- Deregisters this object for Global collision events. Returns true if the object was previously registered, false otherwise.
+---
+---@return boolean
+function Object.unregisterCollisions() end
+
 ---@shape tts__Callback<T>
 ---@field callback_function nil|T
 ---@field callback nil|string @Deprecated - use callback_function
