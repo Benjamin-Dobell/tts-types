@@ -52,6 +52,9 @@
 ---@shape tts__ObjectState_DieCustomImage : tts__ObjectState_CustomImage
 ---@field CustomDice tts__ObjectState_CustomImage_CustomDie
 
+---@shape tts__ObjectState_FigureCustomImage : tts__ObjectState_CustomImage
+---@field CustomDice tts__ObjectState_CustomImage_CustomDie
+
 ---@shape tts__ObjectState_TokenCustomImage : tts__ObjectState_CustomImage
 ---@field CustomToken tts__ObjectState_CustomImage_CustomToken
 
@@ -140,6 +143,10 @@
 ---@shape tts__DieCustomState : tts__DieState
 ---@field Name 'Custom_Dice'
 ---@field CustomImage tts__ObjectState_DieCustomImage
+
+---@shape tts__FigurineCustomState : tts__ObjectState
+---@field Name 'Figurine_Custom'
+---@field CustomImage tts__ObjectState_CustomImage
 
 ---@shape tts__InfiniteBagState : tts__ContainerState
 ---@field Name 'Infinite_Bag'
