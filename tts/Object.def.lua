@@ -174,6 +174,27 @@ function Object.destruct() end
 ---@return tts__Vector
 function Object.getAngularVelocity() end
 
+---@shape tts__Bounds
+---@field center tts__Vector
+---@field size tts__Vector
+---@field offset tts__Vector
+
+---
+--- Returns an axis aligned bounding box encompassing the object. Position is in global coordinates, however the size of bounds takes into account the
+--- underlying object model scale, which is not exposed directly to Lua.
+---
+--- As any (non-spherical) object rotates, these bounds change size to encompass the object's current orientation.
+---@return tts__Bounds
+---@see tts__Object#getBoundsNormalized
+function Object.getBounds() end
+
+---
+--- Returns the object's bounds, in global coordinates, as if the object were rotated to {0, 0, 0}.
+---
+--- The size of these bounds remain unchanged under rotation. However, changes in the object's position are reflected in the bound's center position.
+---@return tts__Bounds
+function Object.getBoundsNormalized() end
+
 ---
 --- Returns object's data (serialized saved state).
 ---@return tts__ObjectState
