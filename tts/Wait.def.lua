@@ -75,7 +75,7 @@ function Wait.stop(waitIdentifier) end
 --- Cancels all pending Wait-enqueued functions.
 ---
 --- WARNING: You should be extremely careful using this function; ideally never. If you're using any third-party
---- scripts/libraries, cancelling all enqueued functions may be break them. Instead you should use Wait.stop to cancel
+--- scripts/libraries, cancelling all enqueued functions may break them. Instead you should use Wait.stop to cancel
 --- specific enqueued functions.
 ---
 ---@see tts__Wait#stop
