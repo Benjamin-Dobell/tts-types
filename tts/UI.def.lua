@@ -15,10 +15,10 @@ function UI.getXmlTable() end
 ---@param xml string
 ---@param assets tts__UICustomAsset[]
 ---@return boolean
-function UI.setXml() end
+function UI.setXml(xml, assets) end
 
 ---@overload fun(xmlTable: table<string, any>[])
----@param xml table<string, any>[]
+---@param xmlTable table<string, any>[]
 ---@param assets tts__UICustomAsset[]
 ---@return boolean
-function UI.setXmlTable() end
+function UI.setXmlTable(xmlTable, assets) end

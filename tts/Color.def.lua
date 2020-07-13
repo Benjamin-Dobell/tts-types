@@ -22,8 +22,9 @@
 ---@field [2] number
 ---@field [3] number
 ---@field [4] number
-local Color = {}
+Color = {}
 
+---@vararg any
 ---@return tts__Color
 function Color.new(...) end
 

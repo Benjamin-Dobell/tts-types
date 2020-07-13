@@ -150,3 +150,7 @@
 
 ---@shape tts__InfiniteBagState : tts__ContainerState
 ---@field Name 'Infinite_Bag'
+
+---@shape tts__TokenState : tts__ObjectState
+---@field Name 'Custom_Token'
+---@field CustomImage tts__ObjectState_CustomImage

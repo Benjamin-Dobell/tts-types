@@ -1,18 +1,3 @@
----@class tts__GlobalPlayer
----@field White tts__Player
----@field Brown tts__Player
----@field Red tts__Player
----@field Orange tts__Player
----@field Yellow tts__Player
----@field Green tts__Player
----@field Teal tts__Player
----@field Blue tts__Player
----@field Purple tts__Player
----@field Pink tts__Player
----@field Black tts__Player
----@field Grey tts__Player
-Player = {}
-
 ---@alias tts__PlayerRegularColor 'White' | 'Brown' | 'Red' | 'Orange' | 'Yellow' | 'Green' | 'Teal' | 'Blue' | 'Purple' | 'Pink'
 ---@alias tts__PlayerGameMasterColor 'Black'
 ---@alias tts__PlayerSpectatorColor 'Grey'
@@ -50,3 +35,18 @@ function PlayerInstance.getHandTransform(handIndex) end
 ---@param handIndex number @Default 1
 ---@return tts__Object[]
 function PlayerInstance.getHandObjects(handIndex) end
+
+---@class tts__GlobalPlayer
+---@field White tts__Player
+---@field Brown tts__Player
+---@field Red tts__Player
+---@field Orange tts__Player
+---@field Yellow tts__Player
+---@field Green tts__Player
+---@field Teal tts__Player
+---@field Blue tts__Player
+---@field Purple tts__Player
+---@field Pink tts__Player
+---@field Black tts__Player
+---@field Grey tts__Player
+Player = {}

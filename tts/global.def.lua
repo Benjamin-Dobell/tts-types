@@ -31,9 +31,11 @@ function log(value, label, tags) end
 ---@return string
 function logString(value, label, tag, concise, displayTag) end
 
+---@overload fun(message: string): boolean
 ---@param message string
+---@param color tts__ColorShape
 ---@return boolean
-function printToAll(message) end
+function printToAll(message, color) end
 
 ---@overload fun(player_color: string):string
 ---@param player_color string

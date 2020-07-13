@@ -22,7 +22,7 @@ local Vector = {}
 ---@param y number
 ---@param z number
 ---@return tts__Vector
-function Vector.new() end
+function Vector.new(x, y, z) end
 
 ---@param k 'x' | 'y' | 'z'
 ---@return self
@@ -49,8 +49,7 @@ function Vector:add(other) end
 ---@return tts__Vector
 function Vector.__add(v1, v2) end
 
----@param v1 tts__Vector
----@param v2 tts__CharVectorShape
+---@param other tts__CharVectorShape
 ---@return self
 function Vector:sub(other) end
 
@@ -71,9 +70,9 @@ function Vector:magnitude() end
 
 ---@overload fun(scale: number): self
 ---@overload fun(scale: tts__Vector): self
----@param scaleX string
----@param scaleY string
----@param scaleZ string
+---@param x string
+---@param y string
+---@param z string
 ---@return self
 function Vector:scale(x, y, z) end
 
