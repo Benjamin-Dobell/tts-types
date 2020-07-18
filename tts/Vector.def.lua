@@ -8,7 +8,7 @@
 ---@field [2] number
 ---@field [3] number
 
----@alias tts__VectorShape tts__CharVectorShape|tts__NumVectorShape|number[]
+---@alias tts__VectorShape tts__CharVectorShape | tts__NumVectorShape
 
 ---@class tts__Vector : tts__CharVectorShape
 ---@field __isVector true

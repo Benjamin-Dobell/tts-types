@@ -10,7 +10,7 @@
 ---@field [3] number
 ---@field [4] nil|number
 
----@alias tts__ColorShape tts__CharColorShape|tts__NumColorShape|number[]
+---@alias tts__ColorShape tts__CharColorShape | tts__NumColorShape
 
 ---@class tts__Color
 ---@field __isColor true
