@@ -123,6 +123,9 @@
 ---@field CardID number
 ---@field CustomDeck table<string, tts__ObjectState_CustomDeck>
 
+---@shape tts__BagState : tts__ContainerState
+---@field Name 'Bag'
+
 ---@shape tts__DeckState : tts__ContainerState
 ---@field Name 'Deck'
 ---@field DeckIDs number[] @Despite the name, these are card IDs not deck IDs
