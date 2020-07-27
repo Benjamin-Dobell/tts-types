@@ -15,7 +15,7 @@
 ---@field [1] number
 ---@field [2] number
 ---@field [3] number
-local Vector = {}
+Vector = {}
 
 ---@overload fun(src: tts__VectorShape): tts__Vector
 ---@param x number
@@ -196,5 +196,3 @@ function Vector:orthoNormalize(binormalPlanar) end
 ---@param axis 'x' | 'y' | 'z'
 ---@return number
 function Vector:heading(axis) end
-
-return Vector
