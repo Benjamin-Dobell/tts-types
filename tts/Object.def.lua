@@ -210,6 +210,11 @@ function Object.getGUID() end
 ---@return string
 function Object.getJSON() end
 
+---
+--- Returns object's name, as depicted in the object's tooltip.
+---@return string
+function Object.getName() end
+
 ---@shape tts__SimpleObjectState
 ---@field name string
 ---@field nickname nil|string
