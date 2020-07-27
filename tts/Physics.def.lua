@@ -7,14 +7,14 @@
 ---@field max_distance nil | number @How far the cast will travel. Default Infinity
 ---@field debug nil | boolean @If the cast is visualized for the user. Default false
 
----@shape tts__Physics_CastRayParameters: tts__Physics_CastParameters
+---@shape tts__Physics_CastRayParameters : tts__Physics_CastParameters
 ---@field type 1
 
----@shape tts__Physics_CastSphereParameters: tts__Physics_CastParameters
+---@shape tts__Physics_CastSphereParameters : tts__Physics_CastParameters
 ---@field type 2
 ---@field size nil | tts__VectorShape @size.x specifies the diameter of the sphere. Default (0,0,0)
 
----@shape tts__Physics_CastBoxParameters: tts__Physics_CastParameters
+---@shape tts__Physics_CastBoxParameters : tts__Physics_CastParameters
 ---@field type 3
 ---@field size nil | tts__VectorShape @Size of the box. Default (0,0,0)
 ---@field orientation nil | tts__VectorShape @Euler angles (in degrees) specifying the rotation of the box. Default (0,0,0)
