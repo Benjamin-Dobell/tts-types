@@ -50,19 +50,16 @@
 ---@alias tts__ObjectState_BoardImage tts__ObjectState_CustomImage
 
 ---@shape tts__ObjectState_DieCustomImage : tts__ObjectState_CustomImage
----@field CustomDice tts__ObjectState_CustomImage_CustomDie
-
----@shape tts__ObjectState_FigureCustomImage : tts__ObjectState_CustomImage
----@field CustomDice tts__ObjectState_CustomImage_CustomDie
+---@field CustomDice nil | tts__ObjectState_CustomImage_CustomDie
 
 ---@shape tts__ObjectState_TokenCustomImage : tts__ObjectState_CustomImage
----@field CustomToken tts__ObjectState_CustomImage_CustomToken
+---@field CustomToken nil | tts__ObjectState_CustomImage_CustomToken
 
 ---@shape tts__ObjectState_JigsawPuzzleCustomImage : tts__ObjectState_CustomImage
----@field CustomJigsawPuzzle tts__ObjectState_CustomImage_CustomJigsawPuzzle
+---@field CustomJigsawPuzzle nil | tts__ObjectState_CustomImage_CustomJigsawPuzzle
 
 ---@shape tts__ObjectState_TileCustomImage : tts__ObjectState_CustomImage
----@field CustomTile tts__ObjectState_CustomImage_CustomTile
+---@field CustomTile nil | tts__ObjectState_CustomImage_CustomTile
 
 ---@shape tts__ObjectState_RotationValue
 ---@field Value number|string
@@ -154,6 +151,10 @@
 ---@shape tts__InfiniteBagState : tts__ContainerState
 ---@field Name 'Infinite_Bag'
 
+---@shape tts__TileState : tts__ObjectState
+---@field Name 'Custom_Tile'
+---@field CustomImage tts__ObjectState_TokenCustomImage
+
 ---@shape tts__TokenState : tts__ObjectState
 ---@field Name 'Custom_Token'
----@field CustomImage tts__ObjectState_CustomImage
+---@field CustomImage tts__ObjectState_TileCustomImage
