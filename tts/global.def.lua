@@ -42,3 +42,34 @@ function printToAll(message, color) end
 ---@return string
 function stringColorToRGB(player_color) end
 
+
+---@shape tts__SnapPoint
+---@field position tts__Vector Position of the snap point. The position is relative to the entity's center (a local position).
+---@field rotation tts__Vector Rotation of the snap point. The rotation is relative to the entity's rotation (a local rotation).
+---@field rotation_snap boolean If the snap point is a "rotation" snap point.
+
+---@overload fun(parameters: table):string
+---@param parameters tts__SnapPoint[]
+---@return string
+function setSnapPoints(parameters) end
+
+--- Returns a table of sub-tables, each sub-table representing one snap point.
+---@return tts__SnapPoint[]
+function getSnapPoints() return {} end
+
+
+---@shape tts__VectorLineGroup
+---@field points tts__Vector[] An array of 2 or more points.  Lines are drawn between each consecutive pair of points.
+---@field color nil|tts__Color @Default Color(1,1,1). The color to draw the lines.
+---@field rotation nil|tts__Vector  @Default Vector(0,0,0). Rotation of  lines. The rotation is relative to the entity's rotation (a local rotation).
+---@field thickness nil|number  @Default 0.1. The thickness of the lines
+
+--- Render vector lines  from a list of parameters.
+---@param parameters tts__VectorLineGroup[]
+function setVectorLines(parameters) end
+
+--- Returns a table of sub-tables, each sub-table representing VectorLineGroup.
+---@return tts__VectorLineGroup[]
+function getVectorLines()
+    return {}
+end
