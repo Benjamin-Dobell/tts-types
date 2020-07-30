@@ -290,19 +290,19 @@ function Object.getRotationValue() end
 ---@return tts__Vector
 function Object.getScale() end
 
+---@shape tts__Object_SnapPoint
+---@field position tts__Vector Position of the snap point. The position is relative to the entity's center (a local position).
+---@field rotation tts__Vector Rotation of the snap point. The rotation is relative to the entity's rotation (a local rotation).
+---@field rotation_snap boolean If the snap point is a "rotation" snap point.
 
---- Returns an array of sub-tables, each sub-table representing one snap point.
----@return tts__SnapPoint[]
+--- Returns a table of sub-tables, each sub-table representing one snap point.
+---@return tts__Object_SnapPoint[]
 function Object.getSnapPoints() end
 
 ---
 --- If the object is a bag, deck or stack, returns the number of objects within, otherwise -1.
 ---@return number
 function Object.getQuantity() end
-
---- Returns an array of sub-tables, each sub-table representing VectorLineGroup.
----@return tts__VectorLineGroup[]
-function Object.getVectorLines() end
 
 ---
 --- Returns the object's velocity.
@@ -358,8 +358,8 @@ function Object.setPosition(position) end
 ---@return true
 function Object.setPositionSmooth(position, collide, fast) end
 
---- Spawns snap points from an array of parameters.
----@param parameters tts__SnapPointParameters[]
+--- Spawns snap points from a list of parameters.
+---@param parameters tts__Object_SnapPoint[]
 function Object.setSnapPoints(parameters) end
 
 ---
@@ -389,11 +389,6 @@ function Object.setRotationSmooth(rotation, collide, fast) end
 ---@return true
 ---@see tts__Object#getRotationValues
 function Object.setRotationValue(value) end
-
---- Render vector lines from an array of parameters, relative the aassoicated objects
----@param parameters tts__VectorLineGroupParameters[]
-function Object.setVectorLines(parameters) end
-
 
 ---
 --- Returns a world coordinate position corresponding with local coordinate position.
@@ -499,4 +494,3 @@ end
 ---@return tts__Object[]
 function getAllObjects()
 end
-
