@@ -291,11 +291,11 @@ function Object.getRotationValue() end
 function Object.getScale() end
 
 ---@shape tts__Object_SnapPoint
----@field position tts__Vector Position of the snap point. The position is relative to the entity's center (a local position).
----@field rotation tts__Vector Rotation of the snap point. The rotation is relative to the entity's rotation (a local rotation).
----@field rotation_snap boolean If the snap point is a "rotation" snap point.
+---@field position tts__Vector @Position of the snap point. The position is relative to the object's center (a local position).
+---@field rotation tts__Vector @Rotation of the snap point. The rotation is relative to the object's rotation (a local rotation).
+---@field rotation_snap boolean @If the snap point is a "rotation" snap point.
 
---- Returns a table of sub-tables, each sub-table representing one snap point.
+--- Returns an array of snap points.
 ---@return tts__Object_SnapPoint[]
 function Object.getSnapPoints() end
 
@@ -358,9 +358,16 @@ function Object.setPosition(position) end
 ---@return true
 function Object.setPositionSmooth(position, collide, fast) end
 
---- Spawns snap points from a list of parameters.
----@param parameters tts__Object_SnapPoint[]
-function Object.setSnapPoints(parameters) end
+---@shape tts__Object_SnapPointParameters
+---@field position nil | tts__VectorShape @Position of the snap point. The position is relative to the object's center (a local position). Default {0, 0, 0}
+---@field rotation nil | tts__VectorShape @Rotation of the snap point. The rotation is relative to the object's rotation (a local rotation). Default {0, 0, 0}
+---@field rotation_snap nil | boolean @If the snap point is a "rotation" snap point. Default false
+
+--- Removes all existing snap points, replacing them with a snap point per entry in the provided snap point parameters array.
+---@param snapPointParameters tts__Object_SnapPointParameters[]
+---@return true
+---@see tts__Object#getSnapPoints
+function Object.setSnapPoints(snapPointParameters) end
 
 ---
 --- Sets the object's rotation to the specified orientation, provided as a vector of Euler angles.
