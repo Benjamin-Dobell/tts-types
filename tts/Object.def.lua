@@ -416,7 +416,7 @@ function Object.setRotationValue(value) end
 --- Removes all existing vector lines, replacing them with a new vector line per entry in the provided vector line parameters array.
 ---@param lines tts__Object_VectorLineParameters[]
 ---@return true
----@see tts__Object#setVectorLines
+---@see tts__Object#getVectorLines
 function Object.setVectorLines(lines) end
 
 ---
