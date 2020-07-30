@@ -374,10 +374,10 @@ function Object.setPositionSmooth(position, collide, fast) end
 ---@field rotation_snap nil | boolean @If the snap point is a "rotation" snap point. Default false
 
 --- Removes all existing snap points, replacing them with a snap point per entry in the provided snap point parameters array.
----@param snapPointParameters tts__Object_SnapPointParameters[]
+---@param snapPoints tts__Object_SnapPointParameters[]
 ---@return true
 ---@see tts__Object#getSnapPoints
-function Object.setSnapPoints(snapPointParameters) end
+function Object.setSnapPoints(snapPoints) end
 
 ---
 --- Sets the object's rotation to the specified orientation, provided as a vector of Euler angles.
