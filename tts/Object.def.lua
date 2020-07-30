@@ -304,6 +304,16 @@ function Object.getSnapPoints() end
 ---@return number
 function Object.getQuantity() end
 
+---@shape tts__Object_VectorLine
+---@field points tts__Vector[] @An array of 2 or more points representing a series of line segments from one point to the next.
+---@field color tts__Color @The color of the line.
+---@field rotation tts__Vector @Rotation of vector line. The rotation is relative to the object's rotation (a local rotation).
+---@field thickness number @The thickness of the line.
+
+--- Returns an array of vector lines.
+---@return tts__Object_VectorLine[]
+function Object.getVectorLines() end
+
 ---
 --- Returns the object's velocity.
 ---@return tts__Vector
@@ -396,6 +406,18 @@ function Object.setRotationSmooth(rotation, collide, fast) end
 ---@return true
 ---@see tts__Object#getRotationValues
 function Object.setRotationValue(value) end
+
+---@shape tts__Object_VectorLineParameters
+---@field points tts__VectorShape[] @An array of 2 or more points representing a series of line segments from one point to the next.
+---@field color nil | tts__ColorShape @The color of the line. Default {1, 1, 1}
+---@field rotation nil | tts__VectorShape @Rotation of vector line. The rotation is relative to the object's rotation (a local rotation). Default {0, 0, 0}
+---@field thickness nil | number @The thickness of the line. Default 0.1
+
+--- Removes all existing vector lines, replacing them with a new vector line per entry in the provided vector line parameters array.
+---@param lines tts__Object_VectorLineParameters[]
+---@return true
+---@see tts__Object#setVectorLines
+function Object.setVectorLines(lines) end
 
 ---
 --- Returns a world coordinate position corresponding with local coordinate position.
