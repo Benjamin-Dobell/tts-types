@@ -18,10 +18,10 @@
 ---@field UniqueBack boolean
 
 --- D4 | D6 | D8 | D10 | D12 | D20
----@alias tts_DieType 0 | 1 | 2 | 3 | 4 | 5
+---@alias tts__DieType 0 | 1 | 2 | 3 | 4 | 5
 
 ---@shape tts__ObjectState_CustomImage_CustomDie
----@field Type tts_DieType
+---@field Type tts__DieType
 
 ---@shape tts__ObjectState_CustomImage_CustomToken
 ---@field Thickness nil|number
@@ -33,10 +33,10 @@
 ---@field ImageOnBoard nil|boolean
 
 --- Box | Hex | Circle | Rounded
----@alias tts_TileType 0 | 1 | 2 | 3
+---@alias tts__TileType 0 | 1 | 2 | 3
 
 ---@shape tts__ObjectState_CustomImage_CustomTile
----@field Type tts_TileType
+---@field Type tts__TileType
 ---@field Thickness nil|number
 ---@field Stackable nil|boolean
 ---@field Stretch nil|boolean
