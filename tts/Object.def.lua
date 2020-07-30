@@ -523,3 +523,9 @@ end
 ---@return tts__Object[]
 function getAllObjects()
 end
+
+---@class tts__Global : tts__Object
+Global = {}
+
+---@class tts__Self : tts__Object
+self = {}
