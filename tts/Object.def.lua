@@ -61,12 +61,15 @@
 ---@field use_snap_points boolean
 ---@field value number
 ---@field value_flags number
-local Object = {}
+local Object
 
 --- The following are not real types in TTS, but this allows us to strongly type our code where an object of a specific type is required.
+--- NOTE: There is no tts__AssetBundle or tts__Model, because these objects always masquerade as another object type.
 
 ---@class tts__Container : tts__Object
 local Container
+
+---@class tts__Stackable : tts__Object
 
 ---@class tts__BackgammonPiece : tts__Object
 
@@ -80,11 +83,14 @@ local Container
 
 ---@class tts__Card : tts__Object
 
----@class tts__Checker : tts__Object
+---@class tts__CardCustom : tts__Card
+local CardCustom
+
+---@class tts__Checker : tts__Stackable
 
 ---@class tts__Chess : tts__Object
 
----@class tts__Chip : tts__Object
+---@class tts__Chip : tts__Stackable
 
 ---@class tts__Clock : tts__Object
 
@@ -94,7 +100,13 @@ local Container
 
 ---@class tts__Deck : tts__Container
 
+---@class tts__DeckCustom : tts__Deck
+local DeckCustom
+
 ---@class tts__Die : tts__Object
+
+---@class tts__DieCustom : tts__Die
+local DieCustom
 
 ---@class tts__Domino : tts__Object
 
@@ -135,8 +147,6 @@ local Container
 ---@class tts__ScriptingTrigger : tts__Object
 local ScriptingTrigger
 
----@class tts__Stack : tts__Object
-
 ---@class tts__Superfight : tts__Object
 
 ---@class tts__Surface : tts__Object
@@ -145,7 +155,13 @@ local ScriptingTrigger
 
 ---@class tts__Text : tts__Object
 
+---@class tts__Tile : tts__Stackable
+local Tile
+
 ---@class tts__Tileset : tts__Object
+
+---@class tts__Token : tts__Stackable
+local Token
 
 ---@class tts__VRUI : tts__Object
 
@@ -195,10 +211,105 @@ function Object.getBounds() end
 ---@return tts__Bounds
 function Object.getBoundsNormalized() end
 
----
+---@shape tts__Object_ImageCustomObject
+---@field image string
+---@field image_bottom string @Same value as image_secondary
+---@field image_secondary string
+---@field image_scalar number
+
+--- Plastic | Wood | Metal | Cardboard | Glass
+---@alias tts__MaterialType 0 | 1 | 2 | 3 | 4
+
+--- Generic | Coin | Bag | Figurine | Board | Infinite | Dice
+---@alias tts__AssetBundleType 0 | 1 | 2 | 3 | 4 | 5 | 6
+
+---@shape tts__Object_AssetBundleCustomObject
+---@field assetbundle string
+---@field assetbundle_secondary string
+---@field type tts__AssetBundleType
+---@field material tts__MaterialType
+
+---@shape tts__Object_CardCustomObject
+---@field face string
+---@field unique_back boolean
+---@field back string
+---@field width number
+---@field height number
+---@field sideways boolean
+---@field back_is_hidden boolean
+---@field type tts__CardType
+
+---@shape tts__Object_DeckCustomObject_CustomDeck
+---@field face string
+---@field unique_back boolean
+---@field back string
+---@field width number
+---@field height number
+---@field number number
+---@field sideways boolean
+---@field back_is_hidden boolean
+---@field type tts__CardType
+
+---@alias tts__Object_DeckCustomObject table<string, tts__Object_DeckCustomObject_CustomDeck>
+
+---@shape tts__Object_DieCustomObject : tts__Object_ImageCustomObject
+---@field type tts__DieType
+
+--- Generic | Coin | Bag | Figurine | Board | Infinite | Dice | Chip
+---@alias tts__ModelType 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7
+
+---@shape tts__Object_ModelCustomObject
+---@field mesh string
+---@field diffuse string
+---@field normal string
+---@field collider string
+---@field convex boolean
+---@field type_index tts__ModelType
+---@field material tts__MaterialType
+---@field cast_shadows boolean
+---@field specular_intensity number
+---@field specular_color number
+---@field specular_sharpness tts__Color
+---@field fresnel_strength number
+
+---@shape tts__Object_TileCustomObject : tts__Object_ImageCustomObject
+---@field type tts__TileType
+---@field thickness number
+---@field stackable boolean
+
+---@shape tts__Object_TokenCustomObject : tts__Object_ImageCustomObject
+---@field thickness number
+---@field merge_distance number
+---@field stand_up boolean
+---@field stackable boolean
+
+---@alias tts__Object_CustomObject tts__Object_AssetBundleCustomObject | tts__Object_CardCustomObject | tts__Object_DeckCustomObject | tts__Object_DieCustomObject | tts__Object_ModelCustomObject | tts__Object_TileCustomObject | tts__Object_TokenCustomObject
+
+---@return {} | tts__Object_CustomObject
+function Object.getCustomObject() end
+
+---@return tts__Object_CardCustomObject
+function CardCustom.getCustomObject() end
+
+---@return tts__Object_DeckCustomObject
+function DeckCustom.getCustomObject() end
+
+---@return tts__Object_DieCustomObject
+function DieCustom.getCustomObject() end
+
+---@return tts__Object_TileCustomObject
+function Tile.getCustomObject() end
+
+---@return tts__Object_TokenCustomObject
+function Token.getCustomObject() end
+
 --- Returns object's data (serialized saved state).
 ---@return tts__ObjectState
 function Object.getData() end
+
+--- Returns object's data (serialized saved state).
+---@return tts__ContainerState
+function Container.getData() end
 
 ---
 --- Object's unique identifier.

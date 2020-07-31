@@ -9,13 +9,17 @@
 ---@field scaleY nil|number
 ---@field scaleZ nil|number
 
+--- RectangleRounded | Rectangle | HexRounded | Hex | Circle
+---@alias tts__CardType 0 | 1 | 2 | 3 | 4
+
 ---@shape tts__ObjectState_CustomDeck
+---@field Type nil | tts__CardType
 ---@field FaceURL string
----@field BackURL string
----@field NumWidth number
----@field NumHeight number
----@field BackIsHidden boolean
----@field UniqueBack boolean
+---@field BackURL nil | string
+---@field NumWidth nil | number
+---@field NumHeight nil | number
+---@field BackIsHidden nil | boolean
+---@field UniqueBack nil | boolean
 
 --- D4 | D6 | D8 | D10 | D12 | D20
 ---@alias tts__DieType 0 | 1 | 2 | 3 | 4 | 5
