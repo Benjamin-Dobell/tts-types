@@ -58,8 +58,8 @@ UI = {}
 ---@field minHeight nil | tts__UIElement_Number
 ---@field preferredWidth nil | tts__UIElement_Number
 ---@field preferredHeight nil | tts__UIElement_Number
----@field flexibleWidth nil | tts__UIElement_Boolean
----@field flexibleHeight nil | tts__UIElement_Boolean
+---@field flexibleWidth nil | tts__UIElement_Number
+---@field flexibleHeight nil | tts__UIElement_Number
 ---@field rectAlignment nil | tts__UIElement_Alignment @Default "MiddleCenter"
 ---@field width nil | tts__UIElement_Number | tts__UIElement_Percentage @Default "100%"
 ---@field height nil | tts__UIElement_Number | tts__UIElement_Percentage @Default "100%"
