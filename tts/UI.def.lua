@@ -35,20 +35,27 @@ UI = {}
 --- Left | Right | Middle
 ---@alias tts__UIElement_MouseButton -1 | -2 | -3
 
----@alias tts__UIElement_MouseButtonCallback fun(player: tts__Player, value: tts__UIElement_MouseButton, id: nil | string)
----@alias tts__UIElement_MouseCallback fun(player: tts__Player, value: -1, id: nil | string)
+---@alias tts__UIElement_MouseButtonCallback fun(player: tts__Player, value: string | tts__UIElement_MouseButton, id: nil | string)
+---@alias tts__UIElement_MouseCallback fun(player: tts__Player, value: string | -1, id: nil | string)
 
+--- The name of global function.
+---
+--- By default the global function is looked for in the Lua script context belonging to the same
+--- object as the UI was presented on (or in Global if the UI is Global UI). However, prefixing the
+--- function name with either "Global/" or "[Object GUID]/", will cause the message to be delivered
+--- to the corresponding script context.
+---@alias tts__UIElement_CallbackFunctionName string
 
 ---@shape tts__UIElementBase_Attributes
 ---@field id nil | tts__UIElement_Id
 ---@field name nil | string
 ---@field class nil | string @Space separated list of class names
 ---@field active nil | tts__UIElement_Boolean @Default true
----@field onClick nil | tts__UIElement_MouseButtonCallback
----@field onMouseDown nil | tts__UIElement_MouseButtonCallback
----@field onMouseUp nil | tts__UIElement_MouseButtonCallback
----@field onMouseEnter nil | tts__UIElement_MouseCallback
----@field onMouseExit nil | tts__UIElement_MouseCallback
+---@field onClick nil | tts__UIElement_CallbackFunctionName @Name of tts__UIElement_MouseButtonCallback typed function
+---@field onMouseDown nil | tts__UIElement_CallbackFunctionName @Name of tts__UIElement_MouseButtonCallback typed function
+---@field onMouseUp nil | tts__UIElement_CallbackFunctionName @Name of tts__UIElement_MouseButtonCallback typed function
+---@field onMouseEnter nil | tts__UIElement_CallbackFunctionName @Name of tts__UIElement_MouseCallback typed function
+---@field onMouseExit nil | tts__UIElement_CallbackFunctionName @Name of tts__UIElement_MouseCallback typed function
 ---@field shadow nil | tts__UIElement_Color @Default "None"
 ---@field shadowDistance nil | tts__UIElement_Vector2 @Default "1 -1"
 ---@field outline nil | tts__UIElement_Color @Default "None"
@@ -95,7 +102,7 @@ UI = {}
 
 ---@shape tts__UIButtonElement_Attributes : tts__UIElementBase_Attributes
 ---@field interactable nil | tts__UIElement_Boolean @Default true
----@field textColor nil | tts__UIElement_ColorBlock @Default "#000000"
+---@field textColor nil | tts__UIElement_Color @Default "#000000"
 ---@field colors nil | tts__UIElement_ColorBlock @Default "#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)"
 ---@field textColors nil | tts__UIElement_ColorBlock
 ---@field textShadow nil | tts__UIElement_Color @Default "None"
@@ -111,10 +118,6 @@ UI = {}
 ---@field pressedSprite nil | tts__UIAssetName
 ---@field disabledSprite nil | tts__UIAssetName
 ---@field highlightedSprite nil | tts__UIAssetName
----@field highlightedSprite nil | tts__UIAssetName
----@field highlightedSprite nil | tts__UIAssetName
----@field highlightedSprite nil | tts__UIAssetName
----@field highlightedSprite nil | tts__UIAssetName
 
 ---@shape tts__UIButtonElement : tts__UIElementBase
 ---@field attributes nil | tts__UIButtonElement_Attributes
@@ -124,16 +127,16 @@ UI = {}
 ---@alias tts__UITextElement_VerticalOverflow "Truncate" | "Overflow"
 
 ---@shape tts__UITextElement_Attributes : tts__UIElementBase_Attributes
----@field alignment nil | tts__UIElement_Alignment
+---@field alignment nil | tts__UIElement_Alignment @Default "MiddleCenter"
 ---@field color nil | tts__UIElement_Color
 ---@field font nil | string @Note: At present TTS doesn't really support custom fonts. You can reference a system font name, but each OS has a different font list, so it's probably a bad idea.
----@field fontStyle nil | tts__UIElement_FontStyle
----@field fontSize nil | tts__UIElement_Number
----@field resizeTextForBestFit nil | tts__UIElement_Boolean
----@field resizeTextMinSize nil | tts__UIElement_Number
----@field resizeTextMaxSize nil | tts__UIElement_Number
----@field horizontalOverflow nil | tts__UITextElement_HorizontalOverflow
----@field verticalOverflow nil | tts__UITextElement_VerticalOverflow
+---@field fontStyle nil | tts__UIElement_FontStyle @Default "Normal"
+---@field fontSize nil | tts__UIElement_Number @Default 14
+---@field resizeTextForBestFit nil | tts__UIElement_Boolean @Default false
+---@field resizeTextMinSize nil | tts__UIElement_Number @Default 10
+---@field resizeTextMaxSize nil | tts__UIElement_Number @Default 40
+---@field horizontalOverflow nil | tts__UITextElement_HorizontalOverflow @Default "Overflow"
+---@field verticalOverflow nil | tts__UITextElement_VerticalOverflow @Default "Truncate"
 
 ---@shape tts__UITextElement : tts__UIElementBase
 ---@field tag "Text"
@@ -173,12 +176,44 @@ UI = {}
 ---@field tag "VerticalLayout"
 ---@field attributes nil | tts__UIVerticalLayoutElement_Attributes
 
+---@param id tts__UIElement_Id
+---@param name string
+---@return string
+function UI.getAttribute(id, name) end
+
+---@param id tts__UIElement_Id
+---@return table<string, string>
+function UI.getAttributes(id) end
+
+---@param id tts__UIElement_Id
+---@return string
+function UI.getValue(id) end
 
 ---@return string
 function UI.getXml() end
 
 ---@return tts__UIElement[]
 function UI.getXmlTable() end
+
+---@param id tts__UIElement_Id
+---@param name string
+---@param value string | number | boolean
+---@return boolean
+function UI.setAttribute(id, name, value) end
+
+---@param id tts__UIElement_Id
+---@param attributes table<string, string | number | boolean>
+---@return boolean
+function UI.setAttributes(id, attributes) end
+
+---@param assets tts__UIAsset[]
+---@return void
+function UI.SetCustomAssets(assets) end
+
+---@param id tts__UIElement_Id
+---@param value string
+---@return boolean
+function UI.setValue(id, value) end
 
 ---@overload fun(xml: string)
 ---@param xml string
