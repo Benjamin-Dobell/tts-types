@@ -8,7 +8,6 @@ UI = {}
 ---@field url string
 
 
--- TODO: Union of string literals
 ---@alias tts__UILayoutElement_Tag "HorizontalLayout" | "VerticalLayout"
 ---@alias tts__UILayoutElement tts__UIHorizontalLayoutElement | tts__UIVerticalLayoutElement
 ---@alias tts__UIElement_Tag  tts__UILayoutElement_Tag | "Button" | "Panel" | "Text"
