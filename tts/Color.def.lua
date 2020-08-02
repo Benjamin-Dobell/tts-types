@@ -13,6 +13,7 @@
 ---@alias tts__ColorShape tts__CharColorShape | tts__NumColorShape
 
 ---@class tts__Color
+---@field [tts__PlayerColor] tts__Color
 ---@field __isColor true
 ---@field r number
 ---@field g number
