@@ -196,6 +196,10 @@ function UI.getXml() end
 ---@return tts__UIElement[]
 function UI.getXmlTable() end
 
+---@param id string 
+---@return boolean
+function UI.hide(id) end
+
 ---@param id tts__UIElement_Id
 ---@param name string
 ---@param value string | number | boolean
@@ -227,3 +231,7 @@ function UI.setXml(xml, assets) end
 ---@param assets tts__UIAsset[]
 ---@return boolean
 function UI.setXmlTable(xmlTable, assets) end
+
+---@param id string 
+---@return boolean
+function UI.show(id) end
