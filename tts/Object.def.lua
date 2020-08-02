@@ -316,6 +316,9 @@ function Container.getData() end
 ---@return string
 function Object.getGUID() end
 
+---@return nil | tts__Color
+function Object.getHighlightColor() end
+
 ---
 --- Returns object's data (saved state) serialized into a JSON encoded string.
 ---@return string
@@ -429,6 +432,15 @@ function Object.getVectorLines() end
 --- Returns the object's velocity.
 ---@return tts__Vector
 function Object.getVelocity() end
+
+---@return true
+function Object.highlightOff() end
+
+---@overload fun(color: tts__ColorShape): true
+---@param color tts__ColorShape
+---@param duration number
+---@return true
+function Object.highlightOn(color, duration) end
 
 ---Returns if the object is presently smooth moving, false, otherwise.
 ---@return boolean
