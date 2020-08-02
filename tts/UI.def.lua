@@ -51,6 +51,7 @@ UI = {}
 ---@field name nil | string
 ---@field class nil | string @Space separated list of class names
 ---@field active nil | tts__UIElement_Boolean @Default true
+---@field raycastTarget nil | tts__UIElement_Boolean @Default true
 ---@field onClick nil | tts__UIElement_CallbackFunctionName @Name of tts__UIElement_MouseButtonCallback typed function
 ---@field onMouseDown nil | tts__UIElement_CallbackFunctionName @Name of tts__UIElement_MouseButtonCallback typed function
 ---@field onMouseUp nil | tts__UIElement_CallbackFunctionName @Name of tts__UIElement_MouseButtonCallback typed function
