@@ -1,3 +1,10 @@
+
+---@overload fun(label: string, callback:fun(label: string, object: tts__Object, pointerPosition: nil | tts__Vector, isKeyUp: boolean): void)
+---@param label string
+---@param methodName string
+---@param triggerOnKeyUp boolean @Defaults to false
+function addHotkey(label, methodName, triggerOnKeyUp) end
+
 ---@overload fun(message: string):boolean
 ---@param message string
 ---@param color string
@@ -10,6 +17,10 @@ function broadcastToAll(message, color) end
 ---@param messageColor string
 ---@return boolean
 function broadcastToColor(message, playerColor, messageColor) end
+
+---@param objects tts__Object[]
+---@return (tts__Container|tts__Stackable)[]
+function group(objects) end
 
 ---@overload fun(value: any): string
 ---@overload fun(value: any, label: string): string
