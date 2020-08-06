@@ -1,3 +1,12 @@
+
+
+---addHotkey - Add a bindable control. User may assign a key to it in Options->Game Keys.
+---@overload fun(label:string,  callback:fun())
+---@param label string
+---@param method_name string
+---@param trigger_on_key_up boolean @Defaults to false
+function addHotkey(label, method_name, trigger_on_key_up) end
+
 ---@overload fun(message: string):boolean
 ---@param message string
 ---@param color string
@@ -10,6 +19,10 @@ function broadcastToAll(message, color) end
 ---@param messageColor string
 ---@return boolean
 function broadcastToColor(message, playerColor, messageColor) end
+
+---@param objects tts__Object[]
+---@return tts__Container[]
+function group(objects) end
 
 ---@overload fun(value: any): string
 ---@overload fun(value: any, label: string): string
