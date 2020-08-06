@@ -169,6 +169,25 @@ local Token
 
 ---@alias tts__Object_DealDestination tts__PlayerHandColor | "All" | "Seated"
 
+
+---@shape tts__CreateButtonParameters
+---@field click_function string @A String of the function's name that will be run when button is clicked.
+---@field function_owner nil | string @The Object which contains the click_function function. Defaults to Global>
+---@field label nil | string @Text that appears on the button. Defaults to ''.
+---@field position nil | tts__VectorShape @Where the button appears, relative to the Object's center.
+---@field rotation nil | tts__VectorShape @How the button is rotated, relative to the Object's rotation. Defaults to {x=0, y=0, z=0}.
+---@field scale nil | tts__VectorShape @Scale of the button, relative to the Object's scale. Defaults to {x=1, y=1, z=1}.
+---@field width nil | number @How wide the button will be, relative to the Object. Defaults to 100.
+---@field height nil | number @How tall the button will be, relative to the Object. Defaults to 100.
+---@field font_size nil | number @Size the label font will be, relative to the Object. Defaults to 100.
+---@field color nil | tts__ColorShape @A Color for the clickable button. Defaults to {r=1, g=1, b=1}.
+---@field font_color nil | tts__ColorShape @A Color for the label text.  Defaults to {r=0, g=0, b=0}.
+---@field hover_color nil | tts__ColorShape @A Color for the background during mouse-over.
+---@field press_color nil | tts__ColorShape @A Color for the background when clicked.
+---@field tooltip nil | string @Popup of text, similar to how an Object's name is displayed on mouseover.  Defaults to ''.
+
+---@param parameters tts__CreateButtonParameters
+function Object.createButton(parameters) end
 ---
 --- If the object is a bag, deck or stack, deals an object from within to the specified player hand.
 ---
@@ -211,6 +230,26 @@ function Object.getBounds() end
 --- The size of these bounds remain unchanged under rotation. However, changes in the object's position are reflected in the bound's center position.
 ---@return tts__Bounds
 function Object.getBoundsNormalized() end
+
+---@shape tts__Button 
+---@field click_function string @A String of the function's name that will be run when button is clicked.
+---@field function_owner string @The Object which contains the click_function function.
+---@field label string @Text that appears on the button.
+---@field position tts__VectorShape @Where the button appears, relative to the Object's center.
+---@field rotation tts__VectorShape @How the button is rotated, relative to the Object's rotation.
+---@field scale tts__VectorShape @Scale of the button, relative to the Object's scale.
+---@field width number @How wide the button will be, relative to the Object.
+---@field height number @How tall the button will be, relative to the Object.
+---@field font_size number @Size the label font will be, relative to the Object.
+---@field color tts__ColorShape @A Color for the clickable button.
+---@field font_color tts__ColorShape @A Color for the label text. 
+---@field hover_color tts__ColorShape @A Color for the background during mouse-over.
+---@field press_color tts__ColorShape @A Color for the background when clicked.
+---@field tooltip string @Popup of text, similar to how an Object's name is displayed on mouseover. 
+---@field index number
+
+---@return tts__Button[]
+function Object.getButtons() end
 
 ---@shape tts__Object_ImageCustomObject
 ---@field image string
@@ -423,6 +462,10 @@ function Object.getSnapPoints() end
 ---@return number
 function Object.getQuantity() end
 
+---@param name string
+---@return any
+function Object.getVar(name) end
+
 ---@shape tts__Object_VectorLine
 ---@field points tts__Vector[] @An array of 2 or more points representing a series of line segments from one point to the next.
 ---@field color tts__Color @The color of the line.
@@ -463,6 +506,9 @@ function Object.isSmoothMoving() end
 ---@return boolean
 function Object.jointTo(object, parameters) end
 
+---@param index number @button index for this object, starting at 0
+---@return boolean
+function Object.removeButton(index) end
 ---
 --- Scales the object by the specified multiplier(s), relative to the object's existing scale.
 ---
@@ -477,6 +523,10 @@ function Object.scale(scale) end
 ---@param lock boolean
 ---@return true
 function Object.setLock(lock) end
+
+---@param name string
+---@return true
+function Object.setName(name) end
 
 ---
 --- Sets the object's position.
@@ -495,6 +545,10 @@ function Object.setPosition(position) end
 ---@param fast boolean @Whether object should move quickly. Default false.
 ---@return true
 function Object.setPositionSmooth(position, collide, fast) end
+
+---@param scale tts__VectorShape
+---@return true
+function Object.setScale(scale) end
 
 ---@shape tts__Object_SnapPointParameters
 ---@field position nil | tts__VectorShape @Position of the snap point. The position is relative to the object's center (a local position). Default {0, 0, 0}
@@ -535,6 +589,11 @@ function Object.setRotationSmooth(rotation, collide, fast) end
 ---@see tts__Object#getRotationValues
 function Object.setRotationValue(value) end
 
+---@param name string
+---@param value any
+---@return true
+function Object.setVar(name, value) end
+
 ---@shape tts__Object_VectorLineParameters
 ---@field points tts__VectorShape[] @An array of 2 or more points representing a series of line segments from one point to the next.
 ---@field color nil | tts__ColorShape @The color of the line. Default {1, 1, 1}
@@ -546,6 +605,10 @@ function Object.setRotationValue(value) end
 ---@return true
 ---@see tts__Object#getVectorLines
 function Object.setVectorLines(lines) end
+
+
+---@return boolean
+function Object.shuffle() end
 
 ---
 --- Returns a world coordinate position corresponding with local coordinate position.
