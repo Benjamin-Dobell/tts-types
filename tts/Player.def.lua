@@ -36,6 +36,11 @@ function PlayerInstance.getHandTransform(handIndex) end
 ---@return tts__Object[]
 function PlayerInstance.getHandObjects(handIndex) end
 
+---@overload fun():tts__Object[]
+---@param handndex number @Which hand instance to use, in case a player has multiple hands.  Defaults to the first one
+---@return tts__Object[]
+function PlayerInstance.getSelectedObjects(handndex) end
+
 ---@class tts__GlobalPlayer
 ---@field White tts__Player
 ---@field Brown tts__Player
@@ -50,3 +55,7 @@ function PlayerInstance.getHandObjects(handIndex) end
 ---@field Black tts__Player
 ---@field Grey tts__Player
 Player = {}
+
+
+---@return tts__Player[]
+function Player.getPlayers() end
