@@ -47,6 +47,7 @@
 ---@field pick_up_rotation tts__Vector @[Read only]
 ---@field remainder nil|tts__Object @[Read only]
 ---@field resting boolean
+---@field script_code string
 ---@field script_state string
 ---@field spawning boolean
 ---@field static_friction number
@@ -323,6 +324,10 @@ function Object.getHighlightColor() end
 --- Returns object's data (saved state) serialized into a JSON encoded string.
 ---@return string
 function Object.getJSON() end
+
+--- Returns whether or not the object is locked/frozen in place.
+---@return boolean
+function Object.getLock() end
 
 ---
 --- Returns object's name, as depicted in the object's tooltip.
