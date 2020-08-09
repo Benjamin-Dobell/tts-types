@@ -26,6 +26,9 @@ local PlayerInstance = {}
 ---@field right tts__Vector
 ---@field up tts__Vector
 
+--- Clears the player's current selection.
+function PlayerInstance.clearSelectedObjects() end
+
 ---@overload fun(): tts__HandTransform
 ---@param handIndex number @Default 1
 ---@return tts__HandTransform
@@ -35,6 +38,26 @@ function PlayerInstance.getHandTransform(handIndex) end
 ---@param handIndex number @Default 1
 ---@return tts__Object[]
 function PlayerInstance.getHandObjects(handIndex) end
+
+-- Returns an array of objects currently held by the player.
+---@return tts__Object[]
+function PlayerInstance.getHoldingObjects() end
+
+--- Returns the object the player's pointer is currently hovering over.
+---@return nil | tts__Object
+function PlayerInstance.getHoverObject() end
+
+--- Returns the world coordinates of the player's pointer.
+---@return tts__Vector
+function PlayerInstance.getPointerPosition() end
+
+--- Returns the player's pointers Y-axis rotation.
+---@return number
+function PlayerInstance.getPointerRotation() end
+
+-- Returns an array of objects currently selected by the player.
+---@return tts__Object[]
+function PlayerInstance.getSelectedObjects() end
 
 ---@class tts__GlobalPlayer
 ---@field White tts__Player
@@ -50,3 +73,21 @@ function PlayerInstance.getHandObjects(handIndex) end
 ---@field Black tts__Player
 ---@field Grey tts__Player
 Player = {}
+
+--- Returns player colors for which there is a seat (i.e. at least one hand zone), irrespective of
+--- whether or not there is a player seated.
+---@return tts__PlayerHandColor[]
+function Player.getAvailableColors() end
+
+--- Returns all possible player colors supported by Tabletop Simulator, including GM/black and
+--- spectators/grey.
+---@return tts__PlayerColor[]
+function Player.getColors() end
+
+--- Returns all players.
+---@return tts__Player[]
+function Player.getPlayers() end
+
+--- Returns all spectating (grey) players.
+---@return tts__Player[]
+function Player.getSpectators() end
