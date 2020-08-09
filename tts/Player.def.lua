@@ -51,7 +51,7 @@ function PlayerInstance.getHoverObject() end
 ---@return tts__Vector
 function PlayerInstance.getPointerPosition() end
 
---- Returns the player's pointers Y-axis rotation.
+--- Returns the player's pointer's Y-axis rotation.
 ---@return number
 function PlayerInstance.getPointerRotation() end
 
