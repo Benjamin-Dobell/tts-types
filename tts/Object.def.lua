@@ -4,26 +4,26 @@
 
 ---@shape tts__JointParameters
 ---@field type tts__JointType
----@field joint_object_guid nil|string
----@field collision nil|boolean
----@field break_force nil|number
----@field break_torgue nil|number
----@field axis nil|tts__VectorShape
----@field anchor nil|tts__VectorShape
----@field connected_anchor nil|tts__VectorShape
+---@field joint_object_guid nil | string
+---@field collision nil | boolean
+---@field break_force nil | number
+---@field break_torgue nil | number
+---@field axis nil | tts__VectorShape
+---@field anchor nil | tts__VectorShape
+---@field connected_anchor nil | tts__VectorShape
 
 ---@alias tts__FixedJointOptions tts__JointParameters
 
 ---@shape tts__SpringJointOptions : tts__JointParameters
----@field spring nil|number @Default 10
----@field damper nil|number @Default 0.2
+---@field spring nil | number @Default 10
+---@field damper nil | number @Default 0.2
 
 ---@shape tts__HingeJointOptions : tts__JointParameters
----@field motor_force nil|number
----@field motor_velocity nil|number
----@field motor_free_spin nil|boolean
----@field max_distance nil|number
----@field min_distance nil|number
+---@field motor_force nil | number
+---@field motor_velocity nil | number
+---@field motor_free_spin nil | boolean
+---@field max_distance nil | number
+---@field min_distance nil | number
 
 ---@class tts__Object
 ---@field angular_drag number
@@ -34,7 +34,7 @@
 ---@field dynamic_friction number
 ---@field grid_projection boolean
 ---@field guid string @[Read only]
----@field held_by_color nil|tts__PlayerColor @[Read only]
+---@field held_by_color nil | tts__PlayerColor @[Read only]
 ---@field hide_when_face_down boolean
 ---@field ignore_fog_of_war boolean
 ---@field interactable boolean
@@ -45,7 +45,7 @@
 ---@field max_typed_number number
 ---@field pick_up_position tts__Vector @[Read only]
 ---@field pick_up_rotation tts__Vector @[Read only]
----@field remainder nil|tts__Object @[Read only]
+---@field remainder nil | tts__Object @[Read only]
 ---@field resting boolean
 ---@field script_code string
 ---@field script_state string
@@ -231,7 +231,7 @@ function Object.getBounds() end
 ---@return tts__Bounds
 function Object.getBoundsNormalized() end
 
----@shape tts__Button 
+---@shape tts__Button
 ---@field click_function string @A String of the function's name that will be run when button is clicked.
 ---@field function_owner string @The Object which contains the click_function function.
 ---@field label string @Text that appears on the button.
@@ -242,10 +242,10 @@ function Object.getBoundsNormalized() end
 ---@field height number @How tall the button will be, relative to the Object.
 ---@field font_size number @Size the label font will be, relative to the Object.
 ---@field color tts__ColorShape @A Color for the clickable button.
----@field font_color tts__ColorShape @A Color for the label text. 
+---@field font_color tts__ColorShape @A Color for the label text.
 ---@field hover_color tts__ColorShape @A Color for the background during mouse-over.
 ---@field press_color tts__ColorShape @A Color for the background when clicked.
----@field tooltip string @Popup of text, similar to how an Object's name is displayed on mouseover. 
+---@field tooltip string @Popup of text, similar to how an Object's name is displayed on mouseover.
 ---@field index number
 
 ---@return tts__Button[]
@@ -375,18 +375,18 @@ function Object.getName() end
 
 ---@shape tts__SimpleObjectState
 ---@field name string
----@field nickname nil|string
----@field description nil|string
----@field gm_notes nil|string
+---@field nickname nil | string
+---@field description nil | string
+---@field gm_notes nil | string
 ---@field guid string
----@field lua_script nil|string
----@field lua_script_state nil|string
+---@field lua_script nil | string
+---@field lua_script_state nil | string
 
 ---@shape tts__IndexedSimpleObjectState : tts__SimpleObjectState
 ---@field index number
 
 --- If this object is a scripting trigger, bag or deck, returns the objects contained within. Otherwise, logs an error and returns nil
----@return nil|tts__Object[]|tts__IndexedSimpleObjectState[]
+---@return nil | tts__Object[] | tts__IndexedSimpleObjectState[]
 function Object.getObjects() end
 
 --- If this object is a scripting trigger, bag or deck, returns the objects contained within. Otherwise, logs an error and returns nil
@@ -421,11 +421,11 @@ function Object.getRotation() end
 --- At the time of writing, the only non-custom die that has string rotation values is Die_Piecepack, which has values
 --- "Blank" and "Symbol" in place of the numbers 1 and 6 respectively (on a D6).
 ---
----@return number|string
+---@return number | string
 function Object.getRotationValue() end
 
 ---@shape tts__Object_RotationValue
----@field value number|string
+---@field value number | string
 ---@field rotation tts__CharVectorShape
 
 ---
@@ -440,7 +440,7 @@ function Object.getRotationValues() end
 --- At the time of writing, the only non-custom die that has string rotation values is Die_Piecepack, which has values
 --- "Blank" and "Symbol" in place of the numbers 1 and 6 respectively (on a D6).
 ---
----@return number|string
+---@return number | string
 function Object.getRotationValue() end
 
 ---
@@ -584,7 +584,7 @@ function Object.setRotationSmooth(rotation, collide, fast) end
 ---
 --- Must be a string/number corresponding with an existing rotation value identifier.
 ---
----@param value number|string
+---@param value number | string
 ---@return true
 ---@see tts__Object#getRotationValues
 function Object.setRotationValue(value) end
@@ -625,17 +625,17 @@ function Object.positionToLocal(position) end
 function Object.positionToWorld(position) end
 
 ---@shape tts__Object_TakeObjectParameters : tts__ObjectCallback
----@field top nil|boolean
----@field smooth nil|boolean
----@field position nil|tts__VectorShape
----@field rotation nil|tts__VectorShape
----@field flip nil|boolean
+---@field top nil | boolean
+---@field smooth nil | boolean
+---@field position nil | tts__VectorShape
+---@field rotation nil | tts__VectorShape
+---@field flip nil | boolean
 
 ---@shape tts__Object_GuidTakeObjectParameters : tts__Object_TakeObjectParameters
----@field guid nil|string
+---@field guid nil | string
 
 ---@shape tts__Object_IndexTakeObjectParameters : tts__Object_TakeObjectParameters
----@field index nil|number
+---@field index nil | number
 
 
 ---
@@ -653,7 +653,7 @@ function Object.registerCollisions(stay) end
 --- to use until callback_function been called.
 ---
 ---@param params tts__Object_GuidTakeObjectParameters | tts__Object_IndexTakeObjectParameters
----@return nil|tts__Object
+---@return nil | tts__Object
 function Object.takeObject(params) end
 
 ---
@@ -663,10 +663,10 @@ function Object.takeObject(params) end
 function Object.unregisterCollisions() end
 
 ---@shape tts__Callback<T>
----@field callback_function nil|T
----@field callback nil|string @Deprecated - use callback_function
----@field callback_owner nil|tts__Object @Deprecated - use callback_function
----@field params nil|table @Deprecated - use callback_function
+---@field callback_function nil | T
+---@field callback nil | string @Deprecated - use callback_function
+---@field callback_owner nil | tts__Object @Deprecated - use callback_function
+---@field params nil | table @Deprecated - use callback_function
 
 ---@alias tts__ObjectCallbackFunction fun(object: tts__Object): void
 
@@ -674,16 +674,16 @@ function Object.unregisterCollisions() end
 
 ---@shape tts__SpawnObjectParams : tts__ObjectCallback
 ---@field type string
----@field position nil|tts__VectorShape @Default Vector(0, 0, 0)
----@field rotation nil|tts__VectorShape @Default Vector(0, 0, 0)
----@field scale nil|tts__VectorShape @Default Vector(1, 1, 1)
----@field sound nil|boolean @Default true
----@field snap_to_grid nil|boolean
+---@field position nil | tts__VectorShape @Default Vector(0, 0, 0)
+---@field rotation nil | tts__VectorShape @Default Vector(0, 0, 0)
+---@field scale nil | tts__VectorShape @Default Vector(1, 1, 1)
+---@field sound nil | boolean @Default true
+---@field snap_to_grid nil | boolean
 ---
 ---@shape tts__SpawnObjectSerializedParams : tts__ObjectCallback
----@field position nil|tts__VectorShape
----@field rotation nil|tts__VectorShape
----@field scale nil|tts__VectorShape
+---@field position nil | tts__VectorShape
+---@field rotation nil | tts__VectorShape
+---@field scale nil | tts__VectorShape
 
 ---@shape tts__SpawnObjectDataParams : tts__SpawnObjectSerializedParams
 ---@field data tts__ObjectState
@@ -707,7 +707,7 @@ function spawnObjectJSON(params)
 end
 
 ---@param guid string
----@return nil|tts__Object
+---@return nil | tts__Object
 function getObjectFromGUID(guid)
 end
 

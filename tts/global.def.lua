@@ -5,13 +5,13 @@
 ---@param triggerOnKeyUp boolean @Defaults to false
 function addHotkey(label, methodName, triggerOnKeyUp) end
 
----@overload fun(message: string):boolean
+---@overload fun(message: string): boolean
 ---@param message string
 ---@param color string
 ---@return boolean
 function broadcastToAll(message, color) end
 
----@overload fun(message: string, playerColor: string):boolean
+---@overload fun(message: string, playerColor: string): boolean
 ---@param message string
 ---@param playerColor string
 ---@param messageColor string
@@ -19,7 +19,7 @@ function broadcastToAll(message, color) end
 function broadcastToColor(message, playerColor, messageColor) end
 
 ---@param objects tts__Object[]
----@return (tts__Container|tts__Stackable)[]
+---@return (tts__Container | tts__Stackable)[]
 function group(objects) end
 
 ---@overload fun(value: any): string
@@ -48,7 +48,7 @@ function logString(value, label, tag, concise, displayTag) end
 ---@return boolean
 function printToAll(message, color) end
 
----@overload fun(player_color: string):string
+---@overload fun(player_color: string): string
 ---@param player_color string
 ---@return string
 function stringColorToRGB(player_color) end

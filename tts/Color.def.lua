@@ -2,13 +2,13 @@
 ---@field r number
 ---@field g number
 ---@field b number
----@field a nil|number
+---@field a nil | number
 
 ---@shape tts__NumColorShape
 ---@field [1] number
 ---@field [2] number
 ---@field [3] number
----@field [4] nil|number
+---@field [4] nil | number
 
 ---@alias tts__ColorShape tts__CharColorShape | tts__NumColorShape
 
@@ -47,12 +47,12 @@ function Color:get()
 end
 
 ---@overload fun(): string
----@param includeAlpha nil|boolean
+---@param includeAlpha nil | boolean
 ---@return string
 function Color:toHex(includeAlpha) end
 
 ---@overload fun(): string
----@param tolerance nil|number
+---@param tolerance nil | number
 ---@return string
 function Color:toString(tolerance) end
 

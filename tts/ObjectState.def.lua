@@ -1,13 +1,13 @@
 ---@shape tts__ObjectState_Transform
----@field posX nil|number
----@field posY nil|number
----@field posZ nil|number
----@field rotX nil|number
----@field rotY nil|number
----@field rotZ nil|number
----@field scaleX nil|number
----@field scaleY nil|number
----@field scaleZ nil|number
+---@field posX nil | number
+---@field posY nil | number
+---@field posZ nil | number
+---@field rotX nil | number
+---@field rotY nil | number
+---@field rotZ nil | number
+---@field scaleX nil | number
+---@field scaleY nil | number
+---@field scaleZ nil | number
 
 --- RectangleRounded | Rectangle | HexRounded | Hex | Circle
 ---@alias tts__CardType 0 | 1 | 2 | 3 | 4
@@ -28,28 +28,28 @@
 ---@field Type tts__DieType
 
 ---@shape tts__ObjectState_CustomImage_CustomToken
----@field Thickness nil|number
----@field MergeDistancePixels nil|number
----@field Stackable nil|boolean
+---@field Thickness nil | number
+---@field MergeDistancePixels nil | number
+---@field Stackable nil | boolean
 
 ---@shape tts__ObjectState_CustomImage_CustomJigsawPuzzle
 ---@field NumPuzzlePieces number
----@field ImageOnBoard nil|boolean
+---@field ImageOnBoard nil | boolean
 
 --- Box | Hex | Circle | Rounded
 ---@alias tts__TileType 0 | 1 | 2 | 3
 
 ---@shape tts__ObjectState_CustomImage_CustomTile
 ---@field Type tts__TileType
----@field Thickness nil|number
----@field Stackable nil|boolean
----@field Stretch nil|boolean
+---@field Thickness nil | number
+---@field Stackable nil | boolean
+---@field Stretch nil | boolean
 
 ---@shape tts__ObjectState_CustomImage
 ---@field ImageURL string
----@field ImageSecondaryURL nil|string
----@field ImageScale nil|number
----@field WidthScale nil|number
+---@field ImageSecondaryURL nil | string
+---@field ImageScale nil | number
+---@field WidthScale nil | number
 
 ---@alias tts__ObjectState_BoardImage tts__ObjectState_CustomImage
 
@@ -66,47 +66,47 @@
 ---@field CustomTile nil | tts__ObjectState_CustomImage_CustomTile
 
 ---@shape tts__ObjectState_RotationValue
----@field Value number|string
+---@field Value number | string
 ---@field Rotation tts__CharVectorShape
 
 ---@shape tts__ObjectState
 ---@field Name string
----@field Transform nil|tts__ObjectState_Transform
----@field Nickname nil|string @Default ""
----@field Description nil|string @Default ""
----@field GMNotes nil|string @Default ""
----@field GUID nil|string
----@field LuaScript nil|string @Default ""
----@field LuaScriptState nil|string @Default ""
----@field XmlUI nil|string @Default ""
----@field Grid nil|boolean @Default true
----@field Snap nil|boolean @Default true
----@field DragSelectable nil|boolean @Default true
----@field Autoraise nil|boolean @Default true
----@field Sticky nil|boolean @Default true
----@field Tooltip nil|boolean @Default true
----@field Locked nil|boolean @Default false
----@field IgnoreFoW nil|boolean @Default false
----@field GridProjection nil|boolean @Default false
----@field MeasureMovement nil|boolean
----@field HideWhenFaceDown nil|boolean
----@field Hands nil|boolean
----@field AltSound nil|boolean
----@field DeckIDs nil|number[] @Despite the name, these are card IDs not deck IDs
----@field CardID nil|number
----@field ColorDiffuse nil|tts__CharColorShape
----@field MaterialIndex nil|number
----@field MeshIndex nil|number
----@field Number nil|number
----@field SidewaysCard nil|boolean
----@field RPGmode nil|boolean
----@field RPGdead nil|boolean
----@field FogColor nil|string
----@field FogHidePointers nil|boolean
----@field FogReverseHiding nil|boolean
----@field FogSeethrough nil|boolean
----@field FogReverseHiding nil|boolean
----@field vector nil|tts__CharVectorShape
+---@field Transform nil | tts__ObjectState_Transform
+---@field Nickname nil | string @Default ""
+---@field Description nil | string @Default ""
+---@field GMNotes nil | string @Default ""
+---@field GUID nil | string
+---@field LuaScript nil | string @Default ""
+---@field LuaScriptState nil | string @Default ""
+---@field XmlUI nil | string @Default ""
+---@field Grid nil | boolean @Default true
+---@field Snap nil | boolean @Default true
+---@field DragSelectable nil | boolean @Default true
+---@field Autoraise nil | boolean @Default true
+---@field Sticky nil | boolean @Default true
+---@field Tooltip nil | boolean @Default true
+---@field Locked nil | boolean @Default false
+---@field IgnoreFoW nil | boolean @Default false
+---@field GridProjection nil | boolean @Default false
+---@field MeasureMovement nil | boolean
+---@field HideWhenFaceDown nil | boolean
+---@field Hands nil | boolean
+---@field AltSound nil | boolean
+---@field DeckIDs nil | number[] @Despite the name, these are card IDs not deck IDs
+---@field CardID nil | number
+---@field ColorDiffuse nil | tts__CharColorShape
+---@field MaterialIndex nil | number
+---@field MeshIndex nil | number
+---@field Number nil | number
+---@field SidewaysCard nil | boolean
+---@field RPGmode nil | boolean
+---@field RPGdead nil | boolean
+---@field FogColor nil | string
+---@field FogHidePointers nil | boolean
+---@field FogReverseHiding nil | boolean
+---@field FogSeethrough nil | boolean
+---@field FogReverseHiding nil | boolean
+---@field vector nil | tts__CharVectorShape
 
 ---@shape tts__ContainerState : tts__ObjectState
 ---@field ContainedObjects tts__ObjectState[]
@@ -142,7 +142,7 @@
 
 ---@shape tts__DieState : tts__ObjectState
 ---@field Name 'Custom_Dice' | tts__StandardDieName
----@field RotationValues nil|tts__ObjectState_RotationValue[]
+---@field RotationValues nil | tts__ObjectState_RotationValue[]
 
 ---@shape tts__DieCustomState : tts__DieState
 ---@field Name 'Custom_Dice'
