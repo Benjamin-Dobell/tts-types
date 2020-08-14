@@ -26,7 +26,15 @@ local PlayerInstance = {}
 ---@field right tts__Vector
 ---@field up tts__Vector
 
+--- Changes (moves) the player to the seat of an available color.
+--- Returns false on failure (i.e. if the specified color is already occupied), otherwise true.
+---@param color tts__PlayerColor
+---@return boolean
+function PlayerInstance.changeColor(color) end
+
 --- Clears the player's current selection.
+--- Returns false if the player is incapable of object selection (a Grey player), otherwise true.
+---@return boolean
 function PlayerInstance.clearSelectedObjects() end
 
 ---@overload fun(): tts__HandTransform
