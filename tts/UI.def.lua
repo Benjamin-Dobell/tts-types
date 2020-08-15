@@ -32,13 +32,10 @@ UI = {}
 ---@alias tts__UIElement_HideAnimation "None" | "Shrink" | "FadeOut" | "SlideOut_Left" | "SlideOut_Right" | "SlideOut_Top" | "SlideOut_Bottom"
 ---@alias tts__UIElement_ShowAnimation "None" | "Grow" | "FadeIn" | "SlideIn_Left" | "SlideIn_Right" | "SlideIn_Top" | "SlideIn_Bottom"
 
---- Left | Right | Middle
----@alias tts__UIElement_MouseButton "-1" | "-2" | "-3"
 
----@alias tts__UIElement_MouseButtonCallback fun(player: tts__Player, value: string | tts__UIElement_MouseButton, id: nil | string)
----@alias tts__UIElement_MouseCallback fun(player: tts__Player, value: string | "-1", id: nil | string)
+---@alias tts__UIElement_CallbackFunction fun(player: tts__Player, value: string, id: nil | string)
 
---- The name of global function.
+--- The name of global function matching the type tts__UIElement_CallbackFunction.
 ---
 --- By default the global function is looked for in the Lua script context belonging to the same
 --- object as the UI was presented on (or in Global if the UI is Global UI). However, prefixing the
@@ -52,11 +49,11 @@ UI = {}
 ---@field class nil | string @Space separated list of class names
 ---@field active nil | tts__UIElement_Boolean @Default true
 ---@field raycastTarget nil | tts__UIElement_Boolean @Default true
----@field onClick nil | tts__UIElement_CallbackFunctionName @Name of tts__UIElement_MouseButtonCallback typed function
----@field onMouseDown nil | tts__UIElement_CallbackFunctionName @Name of tts__UIElement_MouseButtonCallback typed function
----@field onMouseUp nil | tts__UIElement_CallbackFunctionName @Name of tts__UIElement_MouseButtonCallback typed function
----@field onMouseEnter nil | tts__UIElement_CallbackFunctionName @Name of tts__UIElement_MouseCallback typed function
----@field onMouseExit nil | tts__UIElement_CallbackFunctionName @Name of tts__UIElement_MouseCallback typed function
+---@field onClick nil | tts__UIElement_CallbackFunctionName @Unless you provide your own parameter as part of the name, the callback is passed "-1" (Left), "-2" (Right) or "-3" (Middle) as the value.
+---@field onMouseDown nil | tts__UIElement_CallbackFunctionName @Unless you provide your own parameter as part of the name, the callback is passed "-1" (Left), "-2" (Right) or "-3" (Middle) as the value.
+---@field onMouseUp nil | tts__UIElement_CallbackFunctionName @Unless you provide your own parameter as part of the name, the callback is passed "-1" (Left), "-2" (Right) or "-3" (Middle) as the value.
+---@field onMouseEnter nil | tts__UIElement_CallbackFunctionName @Unless you provide your own parameter as part of the name, the callback is passed "-1" as the value.
+---@field onMouseExit nil | tts__UIElement_CallbackFunctionName @Unless you provide your own parameter as part of the name, the callback is passed "-1" as the value.
 ---@field shadow nil | tts__UIElement_Color @Default "None"
 ---@field shadowDistance nil | tts__UIElement_Vector2 @Default "1 -1"
 ---@field outline nil | tts__UIElement_Color @Default "None"
