@@ -96,6 +96,9 @@ UI = {}
 ---@field attributes nil | tts__UIElementBase_Attributes
 ---@field children nil | tts__UIElement[]
 
+---@shape tts__UIInputElementBase : tts__UIElementBase
+---@field onValueChanged nil | tts__UIElement_CallbackFunctionName @Name of function with the type tts__UIElement_CallbackFunction
+
 ---@alias tts__UIButtonElement_Transition "None" | "ColorTint" | "SpriteSwap" | "Animation"
 
 ---@shape tts__UIButtonElement_Attributes : tts__UIElementBase_Attributes
@@ -120,6 +123,31 @@ UI = {}
 ---@shape tts__UIButtonElement : tts__UIElementBase
 ---@field attributes nil | tts__UIButtonElement_Attributes
 ---@field value nil | string
+
+---@shape tts__UIDropdownElement : tts__UIInputElementBase
+---@field onValueChanged tts__UIElement_CallbackFunctionName @Callback name may be optionally followed by "(selectedText)", "(selectedValue)" or "(selectedIndex)". The latter causes the selected Option's index (0-based) to be passed to the callback (but represented as a string). The former two are identical and match the default behavior (no parameter specified) passing the text value of the Option to the callback.
+---@field textAlignment nil | tts__UIElement_Alignment @Default "UpperLeft"
+---@field textColor nil | tts__UIElement_Color @Default "#000000"
+---@field textOutline nil | tts__UIElement_Color @Default "None"
+---@field textShadow nil | tts__UIElement_Color @Default "None"
+---@field itemBackgroundColors nil | tts__UIElement_ColorBlock @Default "#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)"
+---@field itemTextColor nil | tts__UIElement_Color @Default "#000000"
+---@field checkColor nil | tts__UIElement_Color @Default "#000000"
+---@field checkImage nil | tts__UIAssetName
+---@field checkImagePreserveAspect nil | boolean
+---@field checkSize nil | number
+---@field arrowColor nil | tts__UIElement_Color @Default "#000000"
+---@field arrowImage nil | tts__UIAssetName
+---@field arrowOffset nil | tts__UIElement_Vector2
+---@field dropdownBackgroundColor nil | tts__UIElement_Color @Default "None"
+---@field dropdownBackgroundImage nil | tts__UIAssetName
+---@field dropdownHeight nil | number
+---@field scrollbarColors nil | tts__UIElement_ColorBlock
+---@field scrollbarImage nil | tts__UIAssetName
+---@field scrollbarBackgroundColor nil | tts__UIElement_Color @Default "None"
+---@field scrollbarBackgroundImage nil | tts__UIAssetName
+---@field scrollSensitivity nil | number
+---@field itemHeight nil | number
 
 ---@alias tts__UITextElement_HorizontalOverflow "Wrap" | "Overflow"
 ---@alias tts__UITextElement_VerticalOverflow "Truncate" | "Overflow"
