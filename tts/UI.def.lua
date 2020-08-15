@@ -33,10 +33,10 @@ UI = {}
 ---@alias tts__UIElement_ShowAnimation "None" | "Grow" | "FadeIn" | "SlideIn_Left" | "SlideIn_Right" | "SlideIn_Top" | "SlideIn_Bottom"
 
 --- Left | Right | Middle
----@alias tts__UIElement_MouseButton -1 | -2 | -3
+---@alias tts__UIElement_MouseButton "-1" | "-2" | "-3"
 
 ---@alias tts__UIElement_MouseButtonCallback fun(player: tts__Player, value: string | tts__UIElement_MouseButton, id: nil | string)
----@alias tts__UIElement_MouseCallback fun(player: tts__Player, value: string | -1, id: nil | string)
+---@alias tts__UIElement_MouseCallback fun(player: tts__Player, value: string | "-1", id: nil | string)
 
 --- The name of global function.
 ---
