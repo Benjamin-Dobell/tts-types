@@ -146,7 +146,7 @@ UI = {}
 ---@field scrollbarImage nil | tts__UIAssetName
 ---@field scrollbarBackgroundColor nil | tts__UIElement_Color @Default "None"
 ---@field scrollbarBackgroundImage nil | tts__UIAssetName
----@field scrollSensitivity nil | number
+---@field scrollSensitivity nil | number @Default 1.0. A factor/multiplier to augment the scroll speed.
 ---@field itemHeight nil | number
 
 ---@alias tts__UITextElement_HorizontalOverflow "Wrap" | "Overflow"
