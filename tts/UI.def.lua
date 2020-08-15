@@ -153,7 +153,7 @@ UI = {}
 ---@field childAlignment nil | tts__UIElement_Alignment
 ---@field padding nil | tts__UIElement_Padding
 
----@shape tts__UILayoutElementBase
+---@shape tts__UILayoutElementBase : tts__UIElementBase
 ---@field attributes nil | tts__UILayoutElementBase_Attributes
 
 ---@shape tts__UIHorizontalOrVerticalLayoutElementBase_Attributes : tts__UILayoutElementBase_Attributes
@@ -196,7 +196,7 @@ function UI.getXml() end
 ---@return tts__UIElement[]
 function UI.getXmlTable() end
 
----@param id string 
+---@param id string
 ---@return boolean
 function UI.hide(id) end
 
@@ -232,6 +232,6 @@ function UI.setXml(xml, assets) end
 ---@return boolean
 function UI.setXmlTable(xmlTable, assets) end
 
----@param id string 
+---@param id string
 ---@return boolean
 function UI.show(id) end
