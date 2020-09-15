@@ -7,14 +7,14 @@ function addHotkey(label, methodName, triggerOnKeyUp) end
 
 ---@overload fun(message: string):boolean
 ---@param message string
----@param color string
+---@param color string | tts__ColorShape
 ---@return boolean
 function broadcastToAll(message, color) end
 
 ---@overload fun(message: string, playerColor: string):boolean
 ---@param message string
 ---@param playerColor string
----@param messageColor string
+---@param messageColor string | tts__ColorShape
 ---@return boolean
 function broadcastToColor(message, playerColor, messageColor) end
 
