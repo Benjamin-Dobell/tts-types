@@ -1,6 +1,8 @@
 ---@class tts__UI
 UI = {}
 
+---@alias tts__UIEventHandler fun(player: tts__Player, value: string, id: string)
+
 ---@alias tts__UIAssetName string
 
 ---@shape tts__UIAsset
@@ -8,10 +10,10 @@ UI = {}
 ---@field url string
 
 
----@alias tts__UILayoutElement_Tag "HorizontalLayout" | "VerticalLayout"
+---@alias tts__UILayoutElement_Tag "HorizontalLayout" | "VerticalLayout" | "TableLayout"
 ---@alias tts__UILayoutElement tts__UIHorizontalLayoutElement | tts__UIVerticalLayoutElement
----@alias tts__UIElement_Tag  tts__UILayoutElement_Tag | "Button" | "Panel" | "Text"
----@alias tts__UIElement tts__UILayoutElement | tts__UIButtonElement | tts__UIPanelElement | tts__UITextElement
+---@alias tts__UIElement_Tag  tts__UILayoutElement_Tag | "Button" | "Panel" | "Image" | "Text" | "Option" | "InputField" | "Cell" | "ToggleButton" | "ToggleGroup" | "TableLayout" |"Row"
+---@alias tts__UIElement tts__UILayoutElement | tts__UIButtonElement | tts__UIPanelElement | tts__UITextElement | tts__UIDropdownElement | tts__UIImageElement
 
 
 ---@alias tts__UIElement_Alignment "UpperLeft" | "UpperCenter" | "UpperRight" | "MiddleLeft" | "MiddleCenter" | "MiddleRight" | "LowerLeft" | "LowerCenter" | "LowerRight"
@@ -101,7 +103,9 @@ UI = {}
 
 ---@alias tts__UIButtonElement_Transition "None" | "ColorTint" | "SpriteSwap" | "Animation"
 
----@shape tts__UIButtonElement_Attributes : tts__UIElementBase_Attributes
+------@shape tts__UIButtonElement_Attributes : tts__UIElementBase_Attributes
+---@field fontSize nil | tts__UIElement_Number  @Default 14
+---@field fontStyle nil | tts__UIElement_FontStyle @Default "Normal"
 ---@field interactable nil | tts__UIElement_Boolean @Default true
 ---@field textColor nil | tts__UIElement_Color @Default "#000000"
 ---@field colors nil | tts__UIElement_ColorBlock @Default "#FFFFFF|#FFFFFF|#C8C8C8|rgba(0.78,0.78,0.78,0.5)"
@@ -124,6 +128,29 @@ UI = {}
 ---@field attributes nil | tts__UIButtonElement_Attributes
 ---@field value nil | string
 
+---@shape tts__UICellElement : tts__UIElementBase
+
+---@shape tts__UIDefaultsElement_Attributes : tts__UIElementBase_Attributes
+---@field childControlWidth nil | tts__UIElement_Boolean
+---@field childControlHeight nil | tts__UIElement_Boolean
+
+---@shape tts__UIDropdownElement_Attributes: tts__UIElementBase_Attributes
+---@field onValueChanged nil | string
+
+---@shape tts__UIDropdownElement : tts__UIElementBase
+---@field tag "Dropdown"
+---@field attributes nil | tts__UIDropdownElement_Attributes
+---@field children nil | tts__UIOptionElement[]
+
+---@shape tts__UIImageElement_Attributes : tts__UIElementBase_Attributes
+---@field image string
+---@field preserveAspect tts__UIElement_Boolean
+
+---@shape tts__UIImageElement : tts__UIElementBase
+---@field attributes tts__UIImageElement_Attributes
+
+---@shape tts__UIRowElement : tts__UIElementBase
+
 ---@alias tts__UITextElement_HorizontalOverflow "Wrap" | "Overflow"
 ---@alias tts__UITextElement_VerticalOverflow "Truncate" | "Overflow"
 
@@ -145,9 +172,30 @@ UI = {}
 ---@field children nil
 ---@field value nil | string
 
+---@shape tts__UITableLayoutElement : tts__UIElementBase
+
+---@shape tts__UIToggleGroupElement : tts__UIElementBase
+
+---@shape tts__UIToggleButtonElement_Attributes : tts__UIElementBase_Attributes
+---@shape tts__UIToggleButtonElement : tts__UIElementBase
+---@field attributes nil | tts__UIToggleButtonElement_Attributes
+---@field value nil | string
+
+
+---@shape tts__UIPanelElement_Attributes: tts__UIElementBase_Attributes
+---@field padding nil | tts__UIElement_Padding
+---@field color nil | tts__UIElement_Color
+
 ---@shape tts__UIPanelElement : tts__UILayoutElementBase
 ---@field tag "Panel"
 
+---@shape tts__UIOptionElement_Attributes: tts__UIElementBase_Attributes
+---@field selected nil | tts__UIElement_Boolean
+
+---@shape tts__UIOptionElement : tts__UIElementBase
+---@field tag "Option"
+---@field attributes nil | tts__UIOptionElement_Attributes
+---@field value nil | string | number
 
 ---@shape tts__UILayoutElementBase_Attributes : tts__UIElementBase_Attributes
 ---@field childAlignment nil | tts__UIElement_Alignment
@@ -155,6 +203,7 @@ UI = {}
 
 ---@shape tts__UILayoutElementBase
 ---@field attributes nil | tts__UILayoutElementBase_Attributes
+---@field children nil | tts__UIElement[]
 
 ---@shape tts__UIHorizontalOrVerticalLayoutElementBase_Attributes : tts__UILayoutElementBase_Attributes
 ---@field spacing nil | tts__UIElement_Number @Default 0
@@ -196,7 +245,7 @@ function UI.getXml() end
 ---@return tts__UIElement[]
 function UI.getXmlTable() end
 
----@param id string 
+---@param id string
 ---@return boolean
 function UI.hide(id) end
 
@@ -232,6 +281,6 @@ function UI.setXml(xml, assets) end
 ---@return boolean
 function UI.setXmlTable(xmlTable, assets) end
 
----@param id string 
+---@param id string
 ---@return boolean
 function UI.show(id) end
