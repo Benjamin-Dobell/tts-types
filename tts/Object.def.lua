@@ -231,7 +231,7 @@ function Object.getBounds() end
 ---@return tts__Bounds
 function Object.getBoundsNormalized() end
 
----@shape tts__Button 
+---@shape tts__Button
 ---@field click_function string @A String of the function's name that will be run when button is clicked.
 ---@field function_owner string @The Object which contains the click_function function.
 ---@field label string @Text that appears on the button.
@@ -242,10 +242,10 @@ function Object.getBoundsNormalized() end
 ---@field height number @How tall the button will be, relative to the Object.
 ---@field font_size number @Size the label font will be, relative to the Object.
 ---@field color tts__ColorShape @A Color for the clickable button.
----@field font_color tts__ColorShape @A Color for the label text. 
+---@field font_color tts__ColorShape @A Color for the label text.
 ---@field hover_color tts__ColorShape @A Color for the background during mouse-over.
 ---@field press_color tts__ColorShape @A Color for the background when clicked.
----@field tooltip string @Popup of text, similar to how an Object's name is displayed on mouseover. 
+---@field tooltip string @Popup of text, similar to how an Object's name is displayed on mouseover.
 ---@field index number
 
 ---@return tts__Button[]
@@ -351,7 +351,9 @@ function Object.getData() end
 ---@return tts__ContainerState
 function Container.getData() end
 
----
+---@return string
+function Object.getGMNotes() end
+
 --- Object's unique identifier.
 ---@return string
 function Object.getGUID() end
@@ -506,6 +508,9 @@ function Object.isSmoothMoving() end
 ---@return boolean
 function Object.jointTo(object, parameters) end
 
+---@param object tts__Object
+function Container.putObject(object) end
+
 ---@param index number @button index for this object, starting at 0
 ---@return boolean
 function Object.removeButton(index) end
@@ -517,6 +522,10 @@ function Object.removeButton(index) end
 ---@return true
 function Object.scale(scale) end
 
+
+---@param notes string
+---@return boolean
+function Object.setGMNotes(notes) end
 ---
 --- Sets whether the object is locked/frozen in place.
 ---
