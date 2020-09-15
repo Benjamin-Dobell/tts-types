@@ -12,7 +12,7 @@ UI = {}
 
 ---@alias tts__UILayoutElement_Tag "HorizontalLayout" | "VerticalLayout" | "TableLayout"
 ---@alias tts__UILayoutElement tts__UIHorizontalLayoutElement | tts__UIVerticalLayoutElement
----@alias tts__UIElement_Tag  tts__UILayoutElement_Tag | "Button" | "Panel" | "Image" | "Text" | "Option" | "InputField" | "Cell" | "ToggleButton" | "ToggleGroup" | "TableLayout" |"Row"
+---@alias tts__UIElement_Tag  tts__UILayoutElement_Tag | "Button" | "Panel" | "Image" | "Text" | "Option" | "InputField" | "Cell" | "ToggleButton" | "ToggleGroup" | "TableLayout" | "Row" | "Defaults" | "Dropdown"
 ---@alias tts__UIElement tts__UILayoutElement | tts__UIButtonElement | tts__UIPanelElement | tts__UITextElement | tts__UIDropdownElement | tts__UIImageElement
 
 
