@@ -98,6 +98,12 @@ UI = {}
 ---@field attributes nil | tts__UIElementBase_Attributes
 ---@field children nil | tts__UIElement[]
 
+---@shape tts__UIInputElementBase_Attributes: tts__UIElementBase_Attributes
+---@field onValueChanged nil | tts__UIElement_CallbackFunctionName @Name of function with the type tts__UIElement_CallbackFunction
+
+---@shape tts__UIInputElementBase : tts__UIElementBase
+---@field attributes nil | tts__UIInputElementBase_Attributes
+
 ---@alias tts__UIButtonElement_Transition "None" | "ColorTint" | "SpriteSwap" | "Animation"
 
 ---@shape tts__UIButtonElement_Attributes : tts__UIElementBase_Attributes
@@ -131,7 +137,7 @@ UI = {}
 ---@field childControlWidth nil | tts__UIElement_Boolean
 ---@field childControlHeight nil | tts__UIElement_Boolean
 
----@shape tts__UIDropdownElement_Attributes: tts__UIElementBase_Attributes
+---@shape tts__UIDropdownElement_Attributes: tts__UIInputElementBase_Attributes
 ---@field onValueChanged tts__UIElement_CallbackFunctionName @Callback name may be optionally followed by "(selectedText)", "(selectedValue)" or "(selectedIndex)". The latter causes the selected Option's index (0-based) to be passed to the callback (but represented as a string). The former two are identical and match the default behavior (no parameter specified) passing the text value of the Option to the callback.
 ---@field textAlignment nil | tts__UIElement_Alignment @Default "UpperLeft"
 ---@field textColor nil | tts__UIElement_Color @Default "#000000"
@@ -195,11 +201,10 @@ UI = {}
 
 ---@shape tts__UIToggleGroupElement : tts__UIElementBase
 
----@shape tts__UIToggleButtonElement_Attributes : tts__UIElementBase_Attributes
----@shape tts__UIToggleButtonElement : tts__UIElementBase
+---@shape tts__UIToggleButtonElement_Attributes : tts__UIInputElementBase_Attributes
+---@shape tts__UIToggleButtonElement : tts__UIInputElementBase
 ---@field attributes nil | tts__UIToggleButtonElement_Attributes
 ---@field value nil | string
-
 
 ---@shape tts__UIPanelElement_Attributes: tts__UIElementBase_Attributes
 ---@field padding nil | tts__UIElement_Padding
