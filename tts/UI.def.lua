@@ -206,6 +206,7 @@ UI = {}
 ---@field color nil | tts__UIElement_Color
 
 ---@shape tts__UIPanelElement : tts__UILayoutElementBase
+---@field attributes nil | tts__UIPanelElement_Attributes
 ---@field tag "Panel"
 
 ---@shape tts__UIOptionElement_Attributes: tts__UIElementBase_Attributes
