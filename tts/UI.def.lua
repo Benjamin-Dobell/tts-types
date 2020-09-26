@@ -255,6 +255,9 @@ function UI.getAttribute(id, name) end
 ---@return table<string, string>
 function UI.getAttributes(id) end
 
+---@return  tts__UIAsset[]
+function UI.getCustomAssets() end
+
 ---@param id tts__UIElement_Id
 ---@return string
 function UI.getValue(id) end
@@ -282,7 +285,7 @@ function UI.setAttributes(id, attributes) end
 
 ---@param assets tts__UIAsset[]
 ---@return void
-function UI.SetCustomAssets(assets) end
+function UI.setCustomAssets(assets) end
 
 ---@param id tts__UIElement_Id
 ---@param value string
