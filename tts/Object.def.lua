@@ -323,7 +323,7 @@ function Object.getButtons() end
 ---@field stand_up boolean
 ---@field stackable boolean
 
----@alias tts__Object_CustomObject tts__Object_AssetBundleCustomObject | tts__Object_CardCustomObject | tts__Object_DeckCustomObject | tts__Object_DieCustomObject | tts__Object_ModelCustomObject | tts__Object_TileCustomObject | tts__Object_TokenCustomObject
+    ---@alias tts__Object_CustomObject tts__Object_AssetBundleCustomObject | tts__Object_CardCustomObject | tts__Object_DeckCustomObject | tts__Object_DieCustomObject | tts__Object_ModelCustomObject | tts__Object_TileCustomObject | tts__Object_TokenCustomObject
 
 ---@return {} | tts__Object_CustomObject
 function Object.getCustomObject() end
@@ -351,7 +351,9 @@ function Object.getData() end
 ---@return tts__ContainerState
 function Container.getData() end
 
----
+---@return string
+function Object.getGMNotes() end
+
 --- Object's unique identifier.
 ---@return string
 function Object.getGUID() end
@@ -506,6 +508,10 @@ function Object.isSmoothMoving() end
 ---@return boolean
 function Object.jointTo(object, parameters) end
 
+---@param object tts__Object
+---@return boolean
+function Container.putObject(object) end
+
 ---@param index number @button index for this object, starting at 0
 ---@return boolean
 function Object.removeButton(index) end
@@ -517,6 +523,10 @@ function Object.removeButton(index) end
 ---@return true
 function Object.scale(scale) end
 
+
+---@param notes string
+---@return true
+function Object.setGMNotes(notes) end
 ---
 --- Sets whether the object is locked/frozen in place.
 ---

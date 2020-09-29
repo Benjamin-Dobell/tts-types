@@ -80,6 +80,7 @@ function PlayerInstance.getSelectedObjects() end
 ---@field Pink tts__Player
 ---@field Black tts__Player
 ---@field Grey tts__Player
+---@field [tts__PlayerColor] tts__Player
 Player = {}
 
 --- Returns player colors for which there is a seat (i.e. at least one hand zone), irrespective of
