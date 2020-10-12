@@ -13,6 +13,9 @@
 ---@alias tts__ColorShape tts__CharColorShape | tts__NumColorShape
 
 ---@class tts__Color
+---@overload fun(src: tts__Color): tts__Color
+---@overload fun(r: number, g: number, b: number): tts__Color
+---@overload fun(r: number, g: number, b: number, a: number): tts__Color
 ---@field [tts__PlayerColor] tts__Color
 ---@field __isColor true
 ---@field r number
@@ -25,9 +28,14 @@
 ---@field [4] number
 Color = {}
 
----@vararg any
+---@overload fun(src: tts__Color): tts__Color
+---@overload fun(r: number, g: number, b: number): tts__Color
+---@param r number
+---@param g number
+---@param b number
+---@param a number
 ---@return tts__Color
-function Color.new(...) end
+function Color.new(r, g, b, a) end
 
 ---@param name string
 ---@param color tts__Color
