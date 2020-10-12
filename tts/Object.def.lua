@@ -232,20 +232,20 @@ function Object.getBounds() end
 function Object.getBoundsNormalized() end
 
 ---@shape tts__Button
----@field click_function string @A String of the function's name that will be run when button is clicked.
----@field function_owner string @The Object which contains the click_function function.
+---@field click_function string @Name of a global function that will be executed when the button is clicked.
+---@field function_owner string @The Object where click_function is defined.
 ---@field label string @Text that appears on the button.
----@field position tts__VectorShape @Where the button appears, relative to the Object's center.
----@field rotation tts__VectorShape @How the button is rotated, relative to the Object's rotation.
----@field scale tts__VectorShape @Scale of the button, relative to the Object's scale.
----@field width number @How wide the button will be, relative to the Object.
----@field height number @How tall the button will be, relative to the Object.
----@field font_size number @Size the label font will be, relative to the Object.
----@field color tts__ColorShape @A Color for the clickable button.
----@field font_color tts__ColorShape @A Color for the label text.
----@field hover_color tts__ColorShape @A Color for the background during mouse-over.
----@field press_color tts__ColorShape @A Color for the background when clicked.
----@field tooltip string @Popup of text, similar to how an Object's name is displayed on mouseover.
+---@field position tts__Vector @Where the button appears, relative to the Object's center.
+---@field rotation tts__Vector @How the button is rotated, relative to the Object's rotation.
+---@field scale tts__Vector @Scale of the button, relative to the Object's scale.
+---@field width number @How wide the button is relative to the Object.
+---@field height number @How tall the button is relative to the Object.
+---@field font_size number @Size of the label font, relative to the Object.
+---@field color tts__Color @The Color of the button background.
+---@field font_color tts__Color @The Color of the label text.
+---@field hover_color tts__Color @The Color of the background during mouse-over.
+---@field press_color tts__Color @The Color of the background when clicked.
+---@field tooltip string @Pop-up description displayed on hover.
 ---@field index number
 
 ---@return tts__Button[]
