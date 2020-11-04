@@ -397,14 +397,6 @@ function Container.getObjects() end
 ---@return tts__Object[]
 function ScriptingTrigger.getObjects() end
 
---- Returns the objects contained within.
----@return table[]
-function Container.getObjects() end
-
---- Returns the objects contained within.
----@return table[]
-function ScriptingTrigger.getObjects() end
-
 ---
 --- Returns the object's position.
 ---@return tts__Vector
