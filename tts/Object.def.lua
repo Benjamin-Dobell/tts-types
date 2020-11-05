@@ -71,6 +71,7 @@ local Object
 local Container
 
 ---@class tts__Stackable : tts__Object
+local Stackable
 
 ---@class tts__BackgammonPiece : tts__Object
 
@@ -83,6 +84,7 @@ local Container
 ---@class tts__Calculator : tts__Object
 
 ---@class tts__Card : tts__Object
+local Card
 
 ---@class tts__CardCustom : tts__Card
 local CardCustom
@@ -396,6 +398,24 @@ function Container.getObjects() end
 --- If this object is a scripting trigger, bag or deck, returns the objects contained within. Otherwise, logs an error and returns nil
 ---@return tts__Object[]
 function ScriptingTrigger.getObjects() end
+
+--- Places an object into a container.
+---
+---@param object tts__Object
+---@return self
+function Container.putObject(object) end
+
+--- Places an chip onto another chip, forming a stack.
+---
+---@param object tts__Stackable
+---@return self
+function Stackable.putObject(object) end
+
+--- Places an card onto another card, forming a deck.
+---
+---@param object tts__Card
+---@return tts__Deck
+function Card.putObject(object) end
 
 ---
 --- Returns the object's position.
