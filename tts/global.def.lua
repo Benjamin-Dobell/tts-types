@@ -1,9 +1,17 @@
 
----@overload fun(label: string, callback:fun(label: string, object: tts__Object, pointerPosition: nil | tts__Vector, isKeyUp: boolean): void)
+---@overload fun(label: string, callback:fun(player: string, object: tts__Object, pointerPosition: nil | tts__Vector, isKeyUp: boolean): void
 ---@param label string
 ---@param methodName string
 ---@param triggerOnKeyUp boolean @Defaults to false
 function addHotkey(label, methodName, triggerOnKeyUp) end
+
+---@param label string
+---@param callback fun(player: tts__PlayerHandColor)
+---@param keepOpen nil | boolean @Defaults to false
+---@overload fun(label: string, callback: fun(player: tts__PlayerHandColor))
+function addContextMenuItem(label, callback, keepOpen) end
+
+function clearContextMenu() end
 
 ---@overload fun(message: string): boolean
 ---@param message string

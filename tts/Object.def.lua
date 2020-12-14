@@ -172,6 +172,14 @@ local Token
 ---@alias tts__Object_DealDestination tts__PlayerHandColor | "All" | "Seated"
 
 
+---@param label string
+---@param callback fun(player: tts__PlayerHandColor)
+---@param keep_open nil | boolean @Defaults to false
+---@overload fun(label: string, callback: fun(player: tts__PlayerHandColor))
+function Object.addContextMenuItem(label, callback, keep_open) end
+
+function Object.clearContextMenu() end
+
 ---@shape tts__CreateButtonParameters
 ---@field click_function string @A String of the function's name that will be run when button is clicked.
 ---@field function_owner nil | string @The Object which contains the click_function function. Defaults to Global>
