@@ -6,6 +6,18 @@
 ---@return true
 function addHotkey(label, methodName, triggerOnKeyUp) end
 
+---@overload fun(label: string, callback: (fun(playerColor: tts__PlayerHandColor, menuPosition: nil | tts__Vector): void)): true
+---@overload fun(label: string, callback: (fun(playerColor: tts__PlayerHandColor, menuPosition: nil | tts__Vector): void), keepOpen: boolean): true
+---@param label string @Text for the menu item.
+---@param callback fun(playerColor: tts__PlayerHandColor, menuPosition: nil | tts__Vector): void
+---@param keepOpen boolean @Whether the context menu should remain open after the item is selected. Defaults to false.
+---@param requireTable boolean @Whether the menu item is only included if the table is being hovered over. Defaults to false.
+---@return true @Technically, returns false if your `callback` param is nil. However, Luanalysis won't allow you to make that mistake.
+function addContextMenuItem(label, callback, keepOpen, requireTable) end
+
+---@return true
+function clearContextMenu() end
+
 ---@overload fun(message: string): boolean
 ---@param message string
 ---@param color string

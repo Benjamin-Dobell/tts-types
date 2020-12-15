@@ -172,6 +172,16 @@ local Token
 ---@alias tts__Object_DealDestination tts__PlayerHandColor | "All" | "Seated"
 
 
+---@overload fun(label: string, callback: (fun(playerColor: tts__PlayerHandColor): void)): true
+---@param label string @Text for the menu item.
+---@param callback fun(playerColor: tts__PlayerHandColor): void
+---@param keepOpen boolean @Whether the context menu should remain open after the item is selected. Defaults to false.
+---@return true @Technically, returns false if your `callback` param is nil. However, Luanalysis won't allow you to make that mistake.
+function Object.addContextMenuItem(label, callback, keepOpen) end
+
+---@return true
+function Object.clearContextMenu() end
+
 ---@shape tts__CreateButtonParameters
 ---@field click_function string @A String of the function's name that will be run when button is clicked.
 ---@field function_owner nil | string @The Object which contains the click_function function. Defaults to Global>
