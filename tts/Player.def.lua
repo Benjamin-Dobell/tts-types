@@ -68,7 +68,18 @@ function PlayerInstance.getPointerRotation() end
 function PlayerInstance.getSelectedObjects() end
 
 ---@class tts__GlobalPlayer
----@field [tts__PlayerColor] tts__Player
+---@field White tts__Player
+---@field Brown tts__Player
+---@field Red tts__Player
+---@field Orange tts__Player
+---@field Yellow tts__Player
+---@field Green tts__Player
+---@field Teal tts__Player
+---@field Blue tts__Player
+---@field Purple tts__Player
+---@field Pink tts__Player
+---@field Black tts__Player
+---@field Grey tts__Player
 Player = {}
 
 --- Returns player colors for which there is a seat (i.e. at least one hand zone), irrespective of
