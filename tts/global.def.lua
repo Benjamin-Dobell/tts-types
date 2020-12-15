@@ -1,8 +1,9 @@
 
----@overload fun(label: string, callback:fun(label: string, object: tts__Object, pointerPosition: nil | tts__Vector, isKeyUp: boolean): void)
+---@overload fun(label: string, callback: fun(label: string, object: tts__Object, pointerPosition: nil | tts__Vector, isKeyUp: boolean): void): true
 ---@param label string
----@param methodName string
+---@param callback fun(label: string, object: tts__Object, pointerPosition: nil | tts__Vector, isKeyUp: boolean): void
 ---@param triggerOnKeyUp boolean @Defaults to false
+---@return true
 function addHotkey(label, methodName, triggerOnKeyUp) end
 
 ---@overload fun(message: string): boolean
