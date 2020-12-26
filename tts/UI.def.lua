@@ -10,8 +10,7 @@ UI = {}
 
 ---@alias tts__UILayoutElement_Tag "HorizontalLayout" | "VerticalLayout" | "TableLayout"
 ---@alias tts__UILayoutElement tts__UIHorizontalLayoutElement | tts__UIVerticalLayoutElement
----@alias tts__UIElement_Tag  tts__UILayoutElement_Tag | "Button" | "Panel" | "Image" | "Text" | "Option" | "InputField" | "Cell" | "ToggleButton" | "ToggleGroup" | "TableLayout" | "Row" | "Defaults" | "Dropdown"
----@alias tts__UIElement tts__UILayoutElement | tts__UIButtonElement | tts__UIPanelElement | tts__UITextElement | tts__UIDropdownElement | tts__UIImageElement
+---@alias tts__UIElement tts__UIDefaultsElement | tts__UILayoutElement | tts__UIButtonElement | tts__UIPanelElement | tts__UITextElement | tts__UIDropdownElement | tts__UIImageElement | tts__UIToggleElement | tts__UIToggleButtonElement | tts__UIToggleGroupElement
 
 
 ---@alias tts__UIElement_Alignment "UpperLeft" | "UpperCenter" | "UpperRight" | "MiddleLeft" | "MiddleCenter" | "MiddleRight" | "LowerLeft" | "LowerCenter" | "LowerRight"
@@ -92,7 +91,6 @@ UI = {}
 ---@field selectOnRight nil | tts__UIElement_Id
 
 ---@shape tts__UIElementBase
----@field tag tts__UIElement_Tag
 ---@field attributes nil | tts__UIElementBase_Attributes
 ---@field children nil | tts__UIElement[]
 
@@ -126,14 +124,15 @@ UI = {}
 ---@field highlightedSprite nil | tts__UIAssetName
 
 ---@shape tts__UIButtonElement : tts__UIElementBase
+---@field tag "Button"
 ---@field attributes nil | tts__UIButtonElement_Attributes
 ---@field value nil | string
 
 ---@shape tts__UICellElement : tts__UIElementBase
 
----@shape tts__UIDefaultsElement_Attributes : tts__UIElementBase_Attributes
----@field childControlWidth nil | tts__UIElement_Boolean
----@field childControlHeight nil | tts__UIElement_Boolean
+---@shape tts__UIDefaultsElement : tts__UIElementBase
+---@field attributes nil
+---@field tag "Defaults"
 
 ---@shape tts__UIDropdownElement_Attributes : tts__UIInputElementBase_Attributes
 ---@field onValueChanged tts__UIElement_CallbackFunctionName @Callback name may be optionally followed by "(selectedText)", "(selectedValue)" or "(selectedIndex)". The latter causes the selected Option's index (0-based) to be passed to the callback (but represented as a string). The former two are identical and match the default behavior (no parameter specified) passing the text value of the Option to the callback.
@@ -170,6 +169,7 @@ UI = {}
 ---@field preserveAspect nil | tts__UIElement_Boolean
 
 ---@shape tts__UIImageElement : tts__UIElementBase
+---@field tag "Image"
 ---@field attributes tts__UIImageElement_Attributes
 
 ---@shape tts__UIRowElement : tts__UIElementBase
@@ -197,19 +197,24 @@ UI = {}
 
 ---@shape tts__UITableLayoutElement : tts__UIElementBase
 
----@shape tts__UIToggleGroupElement : tts__UIElementBase
+---@shape tts__UIToggleElement : tts__UIElementBase
+---@field tag "Toggle"
 
 ---@shape tts__UIToggleButtonElement : tts__UIInputElementBase
+---@field tag "ToggleButton"
 ---@field attributes nil | tts__UIInputElementBase_Attributes
 ---@field value nil | string
+
+---@shape tts__UIToggleGroupElement : tts__UIElementBase
+---@field tag "ToggleGroup"
 
 ---@shape tts__UIPanelElement_Attributes : tts__UIElementBase_Attributes
 ---@field padding nil | tts__UIElement_Padding
 ---@field color nil | tts__UIElement_Color
 
 ---@shape tts__UIPanelElement : tts__UILayoutElementBase
----@field attributes nil | tts__UIPanelElement_Attributes
 ---@field tag "Panel"
+---@field attributes nil | tts__UIPanelElement_Attributes
 
 ---@shape tts__UIOptionElement_Attributes : tts__UIElementBase_Attributes
 ---@field selected nil | tts__UIElement_Boolean
