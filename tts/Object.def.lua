@@ -701,7 +701,7 @@ function Object.unregisterCollisions() end
 ---@field scale nil | tts__VectorShape @Default Vector(1, 1, 1)
 ---@field sound nil | boolean @Default true
 ---@field snap_to_grid nil | boolean
----
+
 ---@shape tts__SpawnObjectSerializedParams : tts__ObjectCallback
 ---@field position nil | tts__VectorShape
 ---@field rotation nil | tts__VectorShape
