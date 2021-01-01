@@ -43,6 +43,7 @@
 ---@field locked boolean
 ---@field mass number
 ---@field max_typed_number number
+---@field name string @[Read only] Internal resource name for this Object. Typically only useful for spawnObjectJSON(). Generally, you want getName() instead.
 ---@field pick_up_position tts__Vector @[Read only]
 ---@field pick_up_rotation tts__Vector @[Read only]
 ---@field remainder nil | tts__Object @[Read only]
