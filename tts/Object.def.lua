@@ -565,7 +565,7 @@ function Object.scale(scale) end
 ---
 --- Returns false if the provided decal parameters are invalid (e.g. blank string name or URL), otherwise true.
 ---
----@param decals tts__Object_DecalParameters
+---@param decals tts__Object_DecalParameters[]
 ---@return boolean
 function Object.setDecals(decals) end
 
