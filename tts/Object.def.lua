@@ -364,6 +364,19 @@ function Object.getData() end
 ---@return tts__ContainerState
 function Container.getData() end
 
+---@shape tts__Object_Decal
+---@field name string
+---@field url string
+---@field position tts__Vector
+---@field rotation tts__Vector
+---@field scale tts__Vector
+
+---
+--- Returns an array of decals, or nil if there are no decals on the object.
+---
+---@return nil | tts__Object_Decal[]
+function Object.getDecals() end
+
 ---
 --- Object's unique identifier.
 ---@return string
@@ -539,6 +552,22 @@ function Object.removeButton(index) end
 ---@param scale number
 ---@return true
 function Object.scale(scale) end
+
+---@shape tts__Object_DecalParameters
+---@field name string
+---@field url string
+---@field position nil | tts__VectorShape @Default Vector(0, 0, 0)
+---@field rotation nil | tts__VectorShape @Default Vector(0, 0, 0)
+---@field scale nil | tts__VectorShape @Default Vector(1, 1, 1)
+
+---
+--- Removes all existing decals, replacing them with a decal per entry in the provided decal parameters array.
+---
+--- Returns false if the provided decal parameters are invalid (e.g. blank string name or URL), otherwise true.
+---
+---@param decals tts__Object_DecalParameters
+---@return boolean
+function Object.setDecals(decals) end
 
 ---
 --- Sets whether the object is locked/frozen in place.
