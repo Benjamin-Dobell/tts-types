@@ -183,7 +183,7 @@ function Object.addContextMenuItem(label, callback, keepOpen) end
 ---@return true
 function Object.clearContextMenu() end
 
----@shape tts__CreateButtonParameters
+---@shape tts__ButtonParameters
 ---@field click_function string @A String of the function's name that will be run when button is clicked.
 ---@field function_owner nil | string @The Object which contains the click_function function. Defaults to Global>
 ---@field label nil | string @Text that appears on the button. Defaults to ''.
@@ -199,8 +199,23 @@ function Object.clearContextMenu() end
 ---@field press_color nil | tts__ColorShape @A Color for the background when clicked.
 ---@field tooltip nil | string @Popup of text, similar to how an Object's name is displayed on mouseover.  Defaults to ''.
 
+---
+--- Removes all buttons from the object.
+---
+---@return true
+function Object.clearButtons() end
+
+---@alias tts__CreateButtonParameters tts__ButtonParameters
+
+---
+--- Creates a new button on the object.
+---
+--- Returns false if you provide invalid parameters (e.g. blank `click_function` string), otherwise true.
+---
 ---@param parameters tts__CreateButtonParameters
+---@return boolean
 function Object.createButton(parameters) end
+
 ---
 --- If the object is a bag, deck or stack, deals an object from within to the specified player hand.
 ---
@@ -217,6 +232,18 @@ function Object.deal(count, destination, handIndex) end
 ---
 ---@return boolean
 function Object.destruct() end
+
+---@shape tts__EditButtonParameters : tts__ButtonParameters
+---@field index number
+
+---
+--- Edits an existing button, referred to by the button's 0-based index (order of creation, starting at zero).
+---
+--- Returns false if you provide invalid parameters (e.g. blank `click_function` string), otherwise true.
+---
+---@param parameters tts__EditButtonParameters
+---@return boolean
+function Object.editButton(parameters) end
 
 ---
 --- Returns the object's angular velocity, in radians per second.
