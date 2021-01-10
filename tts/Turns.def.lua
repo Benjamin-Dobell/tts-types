@@ -9,7 +9,7 @@
 ---@field skip_empty_hands boolean @Skips a player's turn if there are no objects in the player's (primary) hand. WARNING: Does not presently work when using a custom turn ordering.
 ---@field disable_interactations boolean @When enabled, players whose turn it is not will be unable to interact with objects.
 ---@field pass_turns boolean @Whether the player whose turn it currently is permitted to choose to pass their turn to any other seated player.
----@field turn_color tts__PlayerHandColor @The color of the player whose turn it currently is.
+---@field turn_color nil | tts__PlayerHandColor @The color of the player whose turn it currently is.
 Turns = {}
 
 ---@return tts__PlayerHandColor
