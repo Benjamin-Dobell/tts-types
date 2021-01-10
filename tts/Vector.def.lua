@@ -11,6 +11,8 @@
 ---@alias tts__VectorShape tts__CharVectorShape | tts__NumVectorShape
 
 ---@class tts__Vector : tts__CharVectorShape
+---@overload fun(x: number, y: number, z: number): tts__Vector
+---@overload fun(src: tts__VectorShape): tts__Vector
 ---@field __isVector true
 ---@field [1] number
 ---@field [2] number
