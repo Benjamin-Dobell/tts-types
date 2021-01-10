@@ -10,7 +10,7 @@ UI = {}
 
 ---@alias tts__UILayoutElement_Tag "HorizontalLayout" | "VerticalLayout" | "TableLayout"
 ---@alias tts__UILayoutElement tts__UIHorizontalLayoutElement | tts__UIVerticalLayoutElement
----@alias tts__UIElement tts__UIDefaultsElement | tts__UILayoutElement | tts__UIButtonElement | tts__UIPanelElement | tts__UITextElement | tts__UIDropdownElement | tts__UIImageElement | tts__UIToggleElement | tts__UIToggleButtonElement | tts__UIToggleGroupElement
+---@alias tts__UIElement tts__UIDefaultsElement | tts__UILayoutElement | tts__UIButtonElement | tts__UIPanelElement | tts__UITextElement | tts__UIDropdownElement | tts__UIOptionElement | tts__UIImageElement | tts__UIToggleElement | tts__UIToggleButtonElement | tts__UIToggleGroupElement
 
 
 ---@alias tts__UIElement_Alignment "UpperLeft" | "UpperCenter" | "UpperRight" | "MiddleLeft" | "MiddleCenter" | "MiddleRight" | "LowerLeft" | "LowerCenter" | "LowerRight"
@@ -90,14 +90,14 @@ UI = {}
 ---@field selectOnLeft nil | tts__UIElement_Id
 ---@field selectOnRight nil | tts__UIElement_Id
 
----@shape tts__UIElementBase
+---@shape tts__UIElementBase<Child : tts__UIElement>
 ---@field attributes nil | tts__UIElementBase_Attributes
----@field children nil | tts__UIElement[]
+---@field children nil | Child[]
 
 ---@shape tts__UIInputElementBase_Attributes : tts__UIElementBase_Attributes
 ---@field onValueChanged nil | tts__UIElement_CallbackFunctionName @Name of function with the type tts__UIElement_CallbackFunction
 
----@shape tts__UIInputElementBase : tts__UIElementBase
+---@shape tts__UIInputElementBase<Child : tts__UIElement> : tts__UIElementBase<Child>
 ---@field attributes nil | tts__UIInputElementBase_Attributes
 
 ---@alias tts__UIButtonElement_Transition "None" | "ColorTint" | "SpriteSwap" | "Animation"
@@ -123,14 +123,14 @@ UI = {}
 ---@field disabledSprite nil | tts__UIAssetName
 ---@field highlightedSprite nil | tts__UIAssetName
 
----@shape tts__UIButtonElement : tts__UIElementBase
+---@shape tts__UIButtonElement : tts__UIElementBase<tts__UIElement>
 ---@field tag "Button"
 ---@field attributes nil | tts__UIButtonElement_Attributes
 ---@field value nil | string
 
----@shape tts__UICellElement : tts__UIElementBase
+---@shape tts__UICellElement : tts__UIElementBase<tts__UIElement>
 
----@shape tts__UIDefaultsElement : tts__UIElementBase
+---@shape tts__UIDefaultsElement : tts__UIElementBase<tts__UIElement>
 ---@field attributes nil
 ---@field tag "Defaults"
 
@@ -159,20 +159,19 @@ UI = {}
 ---@field scrollSensitivity nil | number @Default 1.0. A factor/multiplier to augment the scroll speed.
 ---@field itemHeight nil | number
 
----@shape tts__UIDropdownElement : tts__UIInputElementBase
+---@shape tts__UIDropdownElement : tts__UIElementBase<tts__UIOptionElement>
 ---@field tag "Dropdown"
 ---@field attributes nil | tts__UIDropdownElement_Attributes
----@field children nil | tts__UIOptionElement[]
 
 ---@shape tts__UIImageElement_Attributes : tts__UIElementBase_Attributes
 ---@field image string
 ---@field preserveAspect nil | tts__UIElement_Boolean
 
----@shape tts__UIImageElement : tts__UIElementBase
+---@shape tts__UIImageElement : tts__UIElementBase<tts__UIElement>
 ---@field tag "Image"
 ---@field attributes tts__UIImageElement_Attributes
 
----@shape tts__UIRowElement : tts__UIElementBase
+---@shape tts__UIRowElement : tts__UIElementBase<tts__UIElement>
 
 ---@alias tts__UITextElement_HorizontalOverflow "Wrap" | "Overflow"
 ---@alias tts__UITextElement_VerticalOverflow "Truncate" | "Overflow"
@@ -189,23 +188,23 @@ UI = {}
 ---@field horizontalOverflow nil | tts__UITextElement_HorizontalOverflow @Default "Overflow"
 ---@field verticalOverflow nil | tts__UITextElement_VerticalOverflow @Default "Truncate"
 
----@shape tts__UITextElement : tts__UIElementBase
+---@shape tts__UITextElement : tts__UIElementBase<tts__UIElement>
 ---@field tag "Text"
 ---@field attributes nil | tts__UITextElement_Attributes
 ---@field children nil
 ---@field value nil | string
 
----@shape tts__UITableLayoutElement : tts__UIElementBase
+---@shape tts__UITableLayoutElement : tts__UIElementBase<tts__UIElement>
 
----@shape tts__UIToggleElement : tts__UIElementBase
+---@shape tts__UIToggleElement : tts__UIElementBase<tts__UIElement>
 ---@field tag "Toggle"
 
----@shape tts__UIToggleButtonElement : tts__UIInputElementBase
+---@shape tts__UIToggleButtonElement : tts__UIInputElementBase<tts__UIElement>
 ---@field tag "ToggleButton"
 ---@field attributes nil | tts__UIInputElementBase_Attributes
 ---@field value nil | string
 
----@shape tts__UIToggleGroupElement : tts__UIElementBase
+---@shape tts__UIToggleGroupElement : tts__UIElementBase<tts__UIElement>
 ---@field tag "ToggleGroup"
 
 ---@shape tts__UIPanelElement_Attributes : tts__UIElementBase_Attributes
@@ -219,7 +218,7 @@ UI = {}
 ---@shape tts__UIOptionElement_Attributes : tts__UIElementBase_Attributes
 ---@field selected nil | tts__UIElement_Boolean
 
----@shape tts__UIOptionElement : tts__UIElementBase
+---@shape tts__UIOptionElement : tts__UIElementBase<tts__UIElement>
 ---@field tag "Option"
 ---@field attributes nil | tts__UIOptionElement_Attributes
 ---@field value nil | string | number
@@ -228,9 +227,8 @@ UI = {}
 ---@field childAlignment nil | tts__UIElement_Alignment
 ---@field padding nil | tts__UIElement_Padding
 
----@shape tts__UILayoutElementBase : tts__UIElementBase
+---@shape tts__UILayoutElementBase : tts__UIElementBase<tts__UIElement>
 ---@field attributes nil | tts__UILayoutElementBase_Attributes
----@field children nil | tts__UIElement[]
 
 ---@shape tts__UIHorizontalOrVerticalLayoutElementBase_Attributes : tts__UILayoutElementBase_Attributes
 ---@field spacing nil | tts__UIElement_Number @Default 0
@@ -243,13 +241,13 @@ UI = {}
 
 ---@shape tts__UIHorizontalLayoutElement_Attributes : tts__UIHorizontalOrVerticalLayoutElementBase_Attributes
 
----@shape tts__UIHorizontalLayoutElement : tts__UIElementBase
+---@shape tts__UIHorizontalLayoutElement : tts__UIElementBase<tts__UIElement>
 ---@field tag "HorizontalLayout"
 ---@field attributes nil | tts__UIHorizontalLayoutElement_Attributes
 
 ---@shape tts__UIVerticalLayoutElement_Attributes : tts__UIHorizontalOrVerticalLayoutElementBase_Attributes
 
----@shape tts__UIVerticalLayoutElement : tts__UIElementBase
+---@shape tts__UIVerticalLayoutElement : tts__UIElementBase<tts__UIElement>
 ---@field tag "VerticalLayout"
 ---@field attributes nil | tts__UIVerticalLayoutElement_Attributes
 
