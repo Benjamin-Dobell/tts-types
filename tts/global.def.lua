@@ -4,7 +4,7 @@
 ---@param callback fun(label: string, object: tts__Object, pointerPosition: nil | tts__Vector, isKeyUp: boolean): void
 ---@param triggerOnKeyUp boolean @Defaults to false
 ---@return true
-function addHotkey(label, methodName, triggerOnKeyUp) end
+function addHotkey(label, callback, triggerOnKeyUp) end
 
 ---@overload fun(label: string, callback: (fun(playerColor: tts__PlayerHandColor, menuPosition: nil | tts__Vector): void)): true
 ---@overload fun(label: string, callback: (fun(playerColor: tts__PlayerHandColor, menuPosition: nil | tts__Vector): void), keepOpen: boolean): true
