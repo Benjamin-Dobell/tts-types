@@ -335,7 +335,7 @@ function Object.getButtons() end
 ---@shape tts__Object_DieCustomObject : tts__Object_ImageCustomObject
 ---@field type tts__DieType
 
---- Generic | Coin | Bag | Figurine | Board | Infinite | Dice | Chip
+--- Generic | Figurine | Dice | Coin | Board | Chip | Bag | Infinite
 ---@alias tts__ModelType 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7
 
 ---@shape tts__Object_ModelCustomObject

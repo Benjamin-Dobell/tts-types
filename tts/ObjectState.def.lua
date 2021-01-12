@@ -51,6 +51,22 @@
 ---@field ImageScale nil | number
 ---@field WidthScale nil | number
 
+---@shape tts__ObjectState_CustomMesh
+---@field MeshURL string
+---@field DiffuseURL nil | string
+---@field ColliderURL nil | string
+---@field Convex nil | boolean
+---@field MaterialIndex nil | tts__MaterialType
+---@field TypeIndex nil | tts__ModelType
+---@field CustomShader nil | tts__ObjectState_CustomMesh_CustomShader
+---@field CastShadow nil | boolean
+
+---@shape tts__ObjectState_CustomMesh_CustomShader
+---@field SpecularColor nil | tts__ColorShape
+---@field SpecularIntensity nil | number
+---@field SpecularSharpness nil | number
+---@field FresnelStrength nil | number
+
 ---@alias tts__ObjectState_BoardImage tts__ObjectState_CustomImage
 
 ---@shape tts__ObjectState_DieCustomImage : tts__ObjectState_CustomImage
@@ -154,6 +170,9 @@
 
 ---@shape tts__InfiniteBagState : tts__ContainerState
 ---@field Name 'Infinite_Bag'
+
+---@shape tts__ModelCustomState: tts__ObjectState
+---@field CustomMesh tts__ObjectState_CustomMesh
 
 ---@shape tts__TileState : tts__ObjectState
 ---@field Name 'Custom_Tile'
