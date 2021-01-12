@@ -51,21 +51,22 @@
 ---@field ImageScale nil | number
 ---@field WidthScale nil | number
 
+---@shape tts__ObjectState_CustomMesh_CustomShader
+---@field SpecularColor nil | tts__ColorShape @Default {0.9, 0.9, 0.9}
+---@field SpecularIntensity nil | number @Default 0.1
+---@field SpecularSharpness nil | number @Default 3
+---@field FresnelStrength nil | number @Default 0.1
+
 ---@shape tts__ObjectState_CustomMesh
 ---@field MeshURL string
 ---@field DiffuseURL nil | string
 ---@field ColliderURL nil | string
----@field Convex nil | boolean
+---@field NormalURL nil | string
+---@field Convex nil | boolean @Default true
 ---@field MaterialIndex nil | tts__MaterialType
 ---@field TypeIndex nil | tts__ModelType
 ---@field CustomShader nil | tts__ObjectState_CustomMesh_CustomShader
----@field CastShadow nil | boolean
-
----@shape tts__ObjectState_CustomMesh_CustomShader
----@field SpecularColor nil | tts__ColorShape
----@field SpecularIntensity nil | number
----@field SpecularSharpness nil | number
----@field FresnelStrength nil | number
+---@field CastShadows nil | boolean @Default true
 
 ---@alias tts__ObjectState_BoardImage tts__ObjectState_CustomImage
 
