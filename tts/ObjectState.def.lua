@@ -172,7 +172,7 @@
 ---@shape tts__InfiniteBagState : tts__ContainerState
 ---@field Name 'Infinite_Bag'
 
----@shape tts__ModelCustomState: tts__ObjectState
+---@shape tts__ModelCustomState : tts__ObjectState
 ---@field CustomMesh tts__ObjectState_CustomMesh
 
 ---@shape tts__TileState : tts__ObjectState
