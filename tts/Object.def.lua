@@ -404,6 +404,9 @@ function Container.getData() end
 ---@return nil | tts__Object_Decal[]
 function Object.getDecals() end
 
+---@return string
+function Object.getDescription() end
+
 ---
 --- Object's unique identifier.
 ---@return string
@@ -595,6 +598,10 @@ function Object.scale(scale) end
 ---@param decals tts__Object_DecalParameters[]
 ---@return boolean
 function Object.setDecals(decals) end
+
+---@param description string
+---@return true
+function Object.setDescription(description) end
 
 ---
 --- Sets whether the object is locked/frozen in place.
