@@ -136,9 +136,14 @@
 ---@field Name 'Card'
 ---@field CardID number
 
----@shape tts__CardCustomState : tts__ObjectState
+---@shape __tts__CardCustomBaseState : tts__ObjectState
 ---@field Name 'CardCustom'
 ---@field CardID number
+
+---@shape tts__CardCustomState : __tts__CardCustomBaseState
+---@field CustomDeck table<number, tts__ObjectState_CustomDeck>
+
+---@shape tts__CardCustomJSONState : __tts__CardCustomBaseState
 ---@field CustomDeck table<string, tts__ObjectState_CustomDeck>
 
 ---@shape tts__BagState : tts__ContainerState
@@ -149,11 +154,16 @@
 ---@field DeckIDs number[] @Despite the name, these are card IDs not deck IDs
 ---@field ContainedObjects tts__ObjectState[]
 
----@shape tts__DeckCustomState : tts__ContainerState
+---@shape __tts__DeckCustomBaseState : tts__ContainerState
 ---@field Name 'DeckCustom'
----@field CustomDeck table<string, tts__ObjectState_CustomDeck>
 ---@field DeckIDs number[] @Despite the name, these are card IDs not deck IDs
 ---@field ContainedObjects tts__ObjectState[]
+
+---@shape tts__DeckCustomState : __tts__DeckCustomBaseState
+---@field CustomDeck table<number, tts__ObjectState_CustomDeck>
+
+---@shape tts__DeckCustomJSONState : __tts__DeckCustomBaseState
+---@field CustomDeck table<string, tts__ObjectState_CustomDeck>
 
 ---@alias tts__StandardDieName 'Die_4' | 'Die_6' | 'Die_6_Rounded' | 'Die_8' | 'Die_10' | 'Die_12' | 'Die_20'
 
@@ -177,8 +187,8 @@
 
 ---@shape tts__TileState : tts__ObjectState
 ---@field Name 'Custom_Tile'
----@field CustomImage tts__ObjectState_TokenCustomImage
+---@field CustomImage tts__ObjectState_TileCustomImage
 
 ---@shape tts__TokenState : tts__ObjectState
 ---@field Name 'Custom_Token'
----@field CustomImage tts__ObjectState_TileCustomImage
+---@field CustomImage tts__ObjectState_TokenCustomImage
