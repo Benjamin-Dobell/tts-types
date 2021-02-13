@@ -572,9 +572,16 @@ function Object.isSmoothMoving() end
 ---@return boolean
 function Object.jointTo(object, parameters) end
 
+--- Randomizes the object i.e. rolls a die, shuffles a deck, reorders a bag, or in the case of objects consisting of multiple states, randomly selects a state.
+---@overload fun(): void
+---@param playerColor tts__PlayerColor
+---@return boolean
+function Object.randomize(playerColor) end
+
 ---@param index number @button index for this object, starting at 0
 ---@return boolean
 function Object.removeButton(index) end
+
 ---
 --- Scales the object by the specified multiplier(s), relative to the object's existing scale.
 ---
