@@ -182,6 +182,9 @@ local Token
 
 ---@alias tts__Object_DealDestination tts__PlayerHandColor | "All" | "Seated"
 
+---@param object tts__Object
+---@return boolean
+function Object.addAttachment(object) end
 
 ---@overload fun(label: string, callback: (fun(playerColor: tts__PlayerHandColor): void)): true
 ---@param label string @Text for the menu item.
@@ -259,6 +262,9 @@ function Object.editButton(parameters) end
 --- Returns the object's angular velocity, in radians per second.
 ---@return tts__Vector
 function Object.getAngularVelocity() end
+
+---@return tts__IndexedSimpleObjectState[]
+function Object.getAttachments() end
 
 ---@shape tts__Bounds
 ---@field center tts__Vector
@@ -480,6 +486,10 @@ function Stackable.putObject(object) end
 ---@param object tts__Card
 ---@return tts__Deck
 function Card.putObject(object) end
+
+---@param index number
+---@return tts__Object
+function Object.removeAttachment(index) end
 
 ---
 --- Returns the object's position.
