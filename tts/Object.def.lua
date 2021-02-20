@@ -112,6 +112,16 @@ local DeckCustom
 ---@class tts__DieCustom : tts__Die
 local DieCustom
 
+---@class Hand : tts__Object
+local Hand
+
+---@return tts__PlayerHandColor
+function Hand.getValue() end
+
+---@param newValue tts__PlayerHandColor
+---@return boolean
+function Hand.setValue(newValue)  end
+
 ---@class tts__Domino : tts__Object
 
 ---@class tts__Figurine : tts__Object
@@ -528,6 +538,9 @@ function Object.getSnapPoints() end
 ---@return number
 function Object.getQuantity() end
 
+---@return any
+function Object.getValue() end
+
 ---@param name string
 ---@return any
 function Object.getVar(name) end
@@ -681,6 +694,10 @@ function Object.setRotationSmooth(rotation, collide, fast) end
 ---@return true
 ---@see tts__Object#getRotationValues
 function Object.setRotationValue(value) end
+
+---@param newValue string
+---@return any
+function Object.setValue(newValue) end
 
 ---@param name string
 ---@param value any
