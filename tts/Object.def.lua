@@ -623,6 +623,10 @@ function Object.setDecals(decals) end
 ---@return true
 function Object.setDescription(description) end
 
+---@param colors tts__PlayerColor[]
+---@return boolean
+function Object.setInvisibleTo(colors) end
+
 ---
 --- Sets whether the object is locked/frozen in place.
 ---
