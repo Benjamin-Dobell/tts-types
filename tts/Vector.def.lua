@@ -30,9 +30,9 @@ function Vector.new(x, y, z) end
 ---@return self
 function Vector:setAt(k, v) end
 
----@param x number
----@param y number
----@param z number
+---@param x nil | number
+---@param y nil | number
+---@param z nil | number
 ---@return self
 function Vector:set(x, y, z) end
 
