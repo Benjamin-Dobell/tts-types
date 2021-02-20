@@ -43,6 +43,7 @@
 ---@field locked boolean
 ---@field mass number
 ---@field max_typed_number number
+---@field memo nil | string
 ---@field name string @[Read only] Internal resource name for this Object. Typically only useful for spawnObjectData()/spawnObjectJSON(). Generally, you want getName() instead.
 ---@field pick_up_position tts__Vector @[Read only]
 ---@field pick_up_rotation tts__Vector @[Read only]
@@ -453,6 +454,7 @@ function Object.getName() end
 ---@field guid string
 ---@field lua_script nil | string
 ---@field lua_script_state nil | string
+---@field memo nil | string
 
 ---@shape tts__IndexedSimpleObjectState : tts__SimpleObjectState
 ---@field index number
