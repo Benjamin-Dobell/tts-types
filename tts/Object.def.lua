@@ -631,6 +631,9 @@ function Object.scale(scale) end
 ---@field rotation nil | tts__VectorShape @Default Vector(0, 0, 0)
 ---@field scale nil | tts__VectorShape @Default Vector(1, 1, 1)
 
+---@param color tts__ColorShape
+---@return boolean
+function Object.setColorTint(color) end
 ---
 --- Removes all existing decals, replacing them with a decal per entry in the provided decal parameters array.
 ---
