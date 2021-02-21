@@ -474,6 +474,12 @@ function Container.getObjects() end
 ---@return tts__Object[]
 function ScriptingTrigger.getObjects() end
 
+--- Combines 2 combinable objects to form a new container (Deck, Stat, etc)
+---
+---@param object tts__Object
+---@return self
+function Object.putObject(object) end
+
 --- Places an object into a container.
 ---
 ---@param object tts__Object
