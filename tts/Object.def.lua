@@ -427,6 +427,9 @@ function Object.getDecals() end
 ---@return string
 function Object.getDescription() end
 
+---@return string
+function Object.getGMNotes() end
+
 ---
 --- Object's unique identifier.
 ---@return string
