@@ -8,7 +8,8 @@ UI = {}
 ---@field url string
 
 
----@alias tts__UILayoutElement_Tag "HorizontalLayout" | "VerticalLayout" | "TableLayout"
+---@alias tts__UILayoutElement_Tag "HorizontalLayout" | "VerticalLayout" | "TableLayout" | "Panel" | "VerticalScrollView"
+---@alias tts__UIElement_Tag  "Defaults" | tts__UILayoutElement_Tag
 ---@alias tts__UILayoutElement tts__UIHorizontalLayoutElement | tts__UIVerticalLayoutElement
 ---@alias tts__UIElement tts__UIDefaultsElement | tts__UILayoutElement | tts__UIButtonElement | tts__UIPanelElement | tts__UITextElement | tts__UIDropdownElement | tts__UIOptionElement | tts__UIImageElement | tts__UIToggleElement | tts__UIToggleButtonElement | tts__UIToggleGroupElement
 
@@ -129,6 +130,8 @@ UI = {}
 ---@field value nil | string
 
 ---@shape tts__UICellElement : tts__UIElementBase<tts__UIElement>
+
+---@shape tts__UIDefaultsElement_Attributes : tts__UIElementBase_Attributes
 
 ---@shape tts__UIDefaultsElement : tts__UIElementBase<tts__UIElement>
 ---@field attributes nil
