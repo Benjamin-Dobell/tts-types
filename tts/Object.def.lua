@@ -497,6 +497,10 @@ function Stackable.putObject(object) end
 
 --- Places an card onto another card, forming a deck.
 ---
+---@param object tts__Card|tts__Deck
+---@return tts__Deck
+function Card.putObject(object) end
+
 ---@param object tts__Card
 ---@return tts__Deck
 function Card.putObject(object) end
