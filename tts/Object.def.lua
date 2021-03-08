@@ -27,6 +27,7 @@
 
 ---@class tts__Object
 ---@field angular_drag number
+---@field AssetBundle tts__AssetBundle  @[Read only]
 ---@field auto_raise boolean
 ---@field bounciness number
 ---@field drag number
@@ -68,6 +69,7 @@ local Object
 
 --- The following are not real types in TTS, but this allows us to strongly type our code where an object of a specific type is required.
 --- NOTE: There is no tts__AssetBundle or tts__Model, because these objects always masquerade as another object type.
+
 
 ---@class tts__Container : tts__Object
 local Container
