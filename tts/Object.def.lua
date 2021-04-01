@@ -55,7 +55,8 @@
 ---@field spawning boolean
 ---@field static_friction number
 ---@field sticky boolean
----@field tag tts__ObjectType @An identifier indicating the type of Tabletop Simulator object. [Read only]
+---@field tag tts__ObjectType @Deprecated: Use type. An identifier indicating the type of Tabletop Simulator object. [Read only]
+---@field type tts__ObjectType @An identifier indicating the type of Tabletop Simulator object. [Read only]
 ---@field tooltip boolean
 ---@field UI tts__UI @[Read only]
 ---@field use_gravity boolean
