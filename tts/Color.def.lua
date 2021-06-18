@@ -10,10 +10,10 @@
 ---@field [3] number
 ---@field [4] nil | number
 
----@alias tts__ColorShape tts__CharColorShape | tts__NumColorShape
+---@alias tts__ColorShape tts__CharColorShape | tts__NumColorShape | tts__PlayerColor
 
 ---@class tts__Color
----@overload fun(src: tts__Color): tts__Color
+---@overload fun(src: tts__Color | tts__NumColorShape | tts__CharColorShape): tts__Color
 ---@overload fun(r: number, g: number, b: number): tts__Color
 ---@overload fun(r: number, g: number, b: number, a: number): tts__Color
 ---@field [tts__PlayerColor] tts__Color
