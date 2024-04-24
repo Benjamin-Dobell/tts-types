@@ -122,9 +122,11 @@ local Hand
 ---@return tts__PlayerHandColor
 function Hand.getValue() end
 
----@param newValue tts__PlayerHandColor
+---@param newValue string
 ---@return boolean
+---@overload fun(newValue: tts__PlayerHandColor): boolean
 function Hand.setValue(newValue)  end
+
 
 ---@class tts__Domino : tts__Object
 
@@ -656,6 +658,10 @@ function Object.setDecals(decals) end
 ---@param description string
 ---@return true
 function Object.setDescription(description) end
+
+---@param colors tts__PlayerColor[]
+---@return boolean
+function Object.setHiddenFrom(colors) end
 
 ---@param colors tts__PlayerColor[]
 ---@return boolean

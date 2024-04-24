@@ -15,8 +15,8 @@ Wait = {}
 --- simply scheduled to be run at a later time.
 ---
 --- The return value is a unique identifier that may be used to cancel the scheduled function before it runs.
----@overload fun(func: (fun(): void), conditionFunc: (fun(): boolean), timeout: number): void
----@overload fun(func: (fun(): void), conditionFunc: (fun(): boolean)): void
+---@overload fun(func: (fun(): void), conditionFunc: (fun(): boolean), timeout: number): number
+---@overload fun(func: (fun(): void), conditionFunc: (fun(): boolean)): number
 ---@param func fun(): void
 ---@param conditionFunc fun(): boolean
 ---@param timeout number @seconds
@@ -36,7 +36,7 @@ function Wait.condition(func, conditionFunc, timeout, timeoutFunc) end
 --- simply scheduled to be run at a later time.
 ---
 --- The return value is a unique identifier that may be used to cancel the scheduled function before it runs.
----@overload fun(func: (fun(): void), seconds: number): void
+---@overload fun(func: (fun(): void), seconds: number): number
 ---@param func fun(): void
 ---@param seconds number
 ---@param repetitions number
@@ -53,7 +53,7 @@ function Wait.time(func, seconds, repetitions) end
 --- simply scheduled to be run at a later time.
 ---
 --- The return value is a unique identifier that may be used to cancel the scheduled function before it runs.
----@overload fun(func: fun(): void): void
+---@overload fun(func: fun(): void): number
 ---@param func fun(): void
 ---@param numberFrames number
 ---@return number

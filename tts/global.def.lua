@@ -61,8 +61,13 @@ function logString(value, label, tag, concise, displayTag) end
 ---@return boolean
 function printToAll(message, color) end
 
----@overload fun(player_color: string): string
----@param player_color string
----@return string
-function stringColorToRGB(player_color) end
+---@overload fun(message: string, playerColor: string): boolean
+---@param message string
+---@param playerColor string
+---@param messageColor string
+---@return boolean
+function printToColor(message, playerColor, messageColor) end
 
+---@param player_color string
+---@return { r: string, g: string, b: string }
+function stringColorToRGB(player_color) end

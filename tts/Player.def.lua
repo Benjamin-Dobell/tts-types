@@ -67,6 +67,25 @@ function PlayerInstance.getPointerRotation() end
 ---@return tts__Object[]
 function PlayerInstance.getSelectedObjects() end
 
+---@class tts__PlayerAction @ : number
+
+---@class tts__GlobalPlayer_Action
+---@field Copy tts__PlayerAction
+---@field Cut tts__PlayerAction
+---@field Delete tts__PlayerAction
+---@field FlipIncrementalLeft tts__PlayerAction
+---@field FlipIncrementalRight tts__PlayerAction
+---@field FlipOver tts__PlayerAction
+---@field Group tts__PlayerAction
+---@field Paste tts__PlayerAction
+---@field PickUp tts__PlayerAction
+---@field Randomize tts__PlayerAction
+---@field RotateIncrementalLeft tts__PlayerAction
+---@field RotateIncrementalRight tts__PlayerAction
+---@field RotateOver tts__PlayerAction
+---@field Select tts__PlayerAction
+---@field Under tts__PlayerAction
+
 ---@class tts__GlobalPlayer
 ---@field White tts__Player
 ---@field Brown tts__Player
@@ -80,6 +99,7 @@ function PlayerInstance.getSelectedObjects() end
 ---@field Pink tts__Player
 ---@field Black tts__Player
 ---@field Grey tts__Player
+---@field Action tts__GlobalPlayer_Action
 Player = {}
 
 --- Returns player colors for which there is a seat (i.e. at least one hand zone), irrespective of

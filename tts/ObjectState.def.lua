@@ -122,8 +122,8 @@
 ---@field FogHidePointers nil | boolean
 ---@field FogReverseHiding nil | boolean
 ---@field FogSeethrough nil | boolean
----@field FogReverseHiding nil | boolean
 ---@field vector nil | tts__CharVectorShape
+---@field Tags nil | string[]
 
 ---@shape tts__ContainerState : tts__ObjectState
 ---@field ContainedObjects tts__ObjectState[]
