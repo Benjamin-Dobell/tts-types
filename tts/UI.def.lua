@@ -53,7 +53,7 @@ UI = {}
 ---@shape tts__UIElementBase_Attributes
 ---@field id nil | tts__UIElement_Id
 ---@field name nil | string
----@field opacity number
+---@field opacity nil | number
 ---@field class nil | string @Space separated list of class names
 ---@field active nil | tts__UIElement_Boolean @Default true
 ---@filed visibility nil | string
