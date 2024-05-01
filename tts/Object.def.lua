@@ -659,11 +659,13 @@ function Object.setDecals(decals) end
 ---@return true
 function Object.setDescription(description) end
 
----@param colors tts__PlayerColor[]
+---@generic C : tts__PlayerColor
+---@param colors C[]
 ---@return boolean
 function Object.setHiddenFrom(colors) end
 
----@param colors tts__PlayerColor[]
+---@generic C : tts__PlayerColor
+---@param colors C[]
 ---@return boolean
 function Object.setInvisibleTo(colors) end
 
