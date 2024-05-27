@@ -48,7 +48,7 @@ function PlayerInstance.getHandTransform(handIndex) end
 function PlayerInstance.getHandObjects(handIndex) end
 
 -- Returns an array of objects currently held by the player.
----@return tts__Object[]
+---@return nil | tts__Object[]
 function PlayerInstance.getHoldingObjects() end
 
 --- Returns the object the player's pointer is currently hovering over.
