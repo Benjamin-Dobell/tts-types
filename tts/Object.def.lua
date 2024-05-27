@@ -252,6 +252,12 @@ function Object.deal(count, destination, handIndex) end
 ---@return boolean
 function Object.destruct() end
 
+---
+--- If held by a player, force the player to drop the object.
+---
+---@return boolean
+function Object.drop() end
+
 ---@shape tts__EditButtonParameters : tts__ButtonParameters
 ---@field index number
 
@@ -601,6 +607,10 @@ function Object.highlightOff() end
 ---@param duration number
 ---@return true
 function Object.highlightOn(color, duration) end
+
+---Returns true if the Object is (or will be) destroyed.
+---@return boolean
+function Object.isDestroyed() end
 
 ---Returns if the object is presently smooth moving, false, otherwise.
 ---@return boolean
