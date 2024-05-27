@@ -8,7 +8,7 @@ Wait = {}
 --- scheduled function (func) will be executed, and conditionFunc will no longer be executed again.
 ---
 --- Optionally, a timeout and timeoutFunc may be specified. If conditionFunc does not return true before the specified
---- timeout (seconds) has elapsed, then the scheduled function is cancelled i.e. will not be called. If a timeoutFunc is
+--- timeout (seconds) has elapsed, then the scheduled function is canceled i.e. will not be called. If a timeoutFunc is
 --- provided, then it will be called when the timeout is reached.
 ---
 --- Note that this function does not pause Lua execution, it always returns immediately. The specified function is
@@ -63,7 +63,7 @@ function Wait.frames(func, numberFrames) end
 ---
 --- Cancels a Wait-scheduled function.
 ---
---- If there's a scheduled function corresponding with the provided `waitIdentifier`, it will be cancelled and `true`
+--- If there's a scheduled function corresponding with the provided `waitIdentifier`, it will be canceled and `true`
 --- will be returned.
 --- If there's no corresponding scheduled function (e.g. it's already executed and no longer scheduled), then `false`
 --- will be return
