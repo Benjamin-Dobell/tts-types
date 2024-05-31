@@ -37,6 +37,9 @@ function PlayerInstance.changeColor(color) end
 ---@return boolean
 function PlayerInstance.clearSelectedObjects() end
 
+---@return number
+function PlayerInstance.getHandCount() end
+
 ---@overload fun(): tts__HandTransform
 ---@param handIndex number @Default 1
 ---@return tts__HandTransform
