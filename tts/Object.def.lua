@@ -526,6 +526,11 @@ function Object.removeAttachment(index) end
 function Object.getPosition() end
 
 ---
+--- Returns the object's smooth moving target position.
+---@return nil | tts__Vector
+function Object.getPositionSmooth() end
+
+---
 --- Returns the object's rotation represented as a Vector of Euler angles.
 ---@return tts__Vector
 function Object.getRotation() end
