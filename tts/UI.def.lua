@@ -33,6 +33,7 @@ UI = {}
 ---@alias tts__UIElement_Number number | string
 ---@alias tts__UIElement_Padding string
 ---@alias tts__UIElement_Percentage string
+---@alias tts__UIElement_TooltipPosition "Above" | "Below" | "Left" | "Right"
 ---@alias tts__UIElement_Vector2 string
 ---@alias tts__UIElement_Vector3 string
 
@@ -55,6 +56,9 @@ UI = {}
 ---@field name nil | string
 ---@field opacity nil | number
 ---@field class nil | string @Space separated list of class names
+---@field hoverClass nil | string
+---@field pressClass nil | string
+---@field selectClass nil | string
 ---@field active nil | tts__UIElement_Boolean @Default true
 ---@filed visibility nil | string
 ---@field raycastTarget nil | tts__UIElement_Boolean @Default true
@@ -99,6 +103,8 @@ UI = {}
 ---@field selectOnDown nil | tts__UIElement_Id
 ---@field selectOnLeft nil | tts__UIElement_Id
 ---@field selectOnRight nil | tts__UIElement_Id
+---@field tooltip nil | string
+---@field tooltipPosition nil |
 
 ---@shape tts__UIElementBase<Attributes : tts__UIElementBase_Attributes, Child : tts__UIElement>
 ---@field attributes nil | Attributes
@@ -172,6 +178,7 @@ UI = {}
 ---@field tag "Dropdown"
 
 ---@shape tts__UIImageElement_Attributes : tts__UIElementBase_Attributes
+---@field color nil | tts__UIElement_Color
 ---@field image string
 ---@field preserveAspect nil | tts__UIElement_Boolean
 
