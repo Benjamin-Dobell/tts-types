@@ -179,7 +179,7 @@ UI = {}
 
 ---@shape tts__UIImageElement_Attributes : tts__UIElementBase_Attributes
 ---@field color nil | tts__UIElement_Color
----@field image string
+---@field image nil | string
 ---@field preserveAspect nil | tts__UIElement_Boolean
 
 ---@shape tts__UIImageElement : tts__UIElementBase<tts__UIImageElement_Attributes, tts__UIElement>
