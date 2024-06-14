@@ -92,6 +92,7 @@ UI = {}
 ---@field anchorMax nil | tts__UIElement_Vector2
 ---@field sizeDelta nil | tts__UIElement_Vector2
 ---@field pivot nil | tts__UIElement_Vector2
+---@field position nil | tts__UIElement_Vector3
 ---@field rotation nil | tts__UIElement_Vector3
 ---@field scale nil | tts__UIElement_Vector2
 ---@field offsetMin nil | tts__UIElement_Vector2
