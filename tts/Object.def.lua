@@ -536,6 +536,11 @@ function Object.getPositionSmooth() end
 function Object.getRotation() end
 
 ---
+--- Returns the object's smooth moving target position.
+---@return nil | tts__Vector
+function Object.getRotationSmooth() end
+
+---
 --- Returns the object's rotation value identifier. Often a number, but may also be a string.
 ---
 --- At the time of writing, the only non-custom die that has string rotation values is Die_Piecepack, which has values
@@ -705,11 +710,9 @@ function Object.setPosition(position) end
 ---
 --- Smoothly moves the object to the specified position.
 ---
----@overload fun(position: tts__VectorShape, collide: boolean): true
----@overload fun(position: tts__VectorShape): true
 ---@param position tts__VectorShape
----@param collide boolean @Whether collision detection is enabled. Default false.
----@param fast boolean @Whether object should move quickly. Default false.
+---@param collide? nil | boolean @Whether collision detection is enabled. Default false.
+---@param fast? nil | boolean @Whether object should move quickly. Default false.
 ---@return true
 function Object.setPositionSmooth(position, collide, fast) end
 
@@ -738,11 +741,9 @@ function Object.setRotation(rotation) end
 ---
 --- Smoothly rotates the object to the specified orientation, provided as a vector of Euler angles.
 ---
----@overload fun(rotation: tts__VectorShape, collide: boolean): true
----@overload fun(rotation: tts__VectorShape): true
 ---@param rotation tts__VectorShape
----@param collide boolean @Whether collision detection is enabled. Default false.
----@param fast boolean @Whether object should rotate quickly. Default false.
+---@param collide? nil | boolean @Whether collision detection is enabled. Default false.
+---@param fast? nil | boolean @Whether object should rotate quickly. Default false.
 ---@return true
 function Object.setRotationSmooth(rotation, collide, fast) end
 
