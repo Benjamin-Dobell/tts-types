@@ -70,7 +70,6 @@ function Wait.frames(func, numberFrames) end
 ---
 ---@param waitIdentifier number
 ---@return boolean
----@see tts__Wait#stop
 function Wait.stop(waitIdentifier) end
 
 ---
