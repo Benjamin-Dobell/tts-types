@@ -100,4 +100,5 @@ function Color:__tostring() end
 
 ---@param other tts__Color
 ---@param t number
+---@return tts__Color
 function Color:lerp(other, t) end
