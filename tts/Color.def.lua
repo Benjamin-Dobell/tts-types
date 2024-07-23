@@ -17,6 +17,7 @@
 ---@overload fun(r: number, g: number, b: number): tts__Color
 ---@overload fun(r: number, g: number, b: number, a: number): tts__Color
 ---@field [tts__PlayerColor] tts__Color
+---@field list tts__PlayerColor[]
 ---@field __isColor true
 ---@field r number
 ---@field g number
