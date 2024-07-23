@@ -60,7 +60,7 @@ UI = {}
 ---@field pressClass nil | string
 ---@field selectClass nil | string
 ---@field active nil | tts__UIElement_Boolean @Default true
----@filed visibility nil | string
+---@field visibility nil | string
 ---@field raycastTarget nil | tts__UIElement_Boolean @Default true
 ---@field onClick nil | tts__UIElement_CallbackFunctionName @Unless you provide your own parameter as part of the name, the callback is passed "-1" (Left), "-2" (Right) or "-3" (Middle) as the value.
 ---@field onMouseDown nil | tts__UIElement_CallbackFunctionName @Unless you provide your own parameter as part of the name, the callback is passed "-1" (Left), "-2" (Right) or "-3" (Middle) as the value.
