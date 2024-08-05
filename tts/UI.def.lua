@@ -6,6 +6,7 @@
 
 ---@class tts__UI
 ---@field AssetType tts__UI_AssetTypes
+---@field loading boolean
 UI = {}
 
 ---@alias tts__UIAssetName string
