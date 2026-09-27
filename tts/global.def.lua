@@ -57,3 +57,6 @@ function printToColor(message, playerColor, messageColor) end
 ---@param player_color string
 ---@return { r: string, g: string, b: string }
 function stringColorToRGB(player_color) end
+
+---@param data table
+function sendExternalMessage(data) end
